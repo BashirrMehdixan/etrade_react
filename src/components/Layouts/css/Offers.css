@@ -1,0 +1,53 @@
+.campaign-bg {
+	text-transform: uppercase;
+	font-weight: 600;
+	color: #fff;
+}
+
+.swiper.campaign-swiper {
+	background-image: url(../../../../public/assets/images/backgrounds/campaign-bg3.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 20px 0 18px;
+}
+
+.swiper.campaign-swiper .swiper-slide {
+	text-align: center;
+	font-size: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.swiper.campaign-swiper .swiper-slide a {
+	color: #fff;
+	text-decoration: underline;
+	margin: 0 5px;
+	transition: .5s;
+}
+
+.swiper.campaign-swiper .swiper-slide a:hover {
+	color: #ff497c;
+}
+
+.campaign-bg .offer-btn {
+	background-color: transparent;
+	color: #fff;
+	font-weight: 900;
+	z-index: 2;
+	border: none;
+}
+
+.campaign-bg .image-swiper-button-prev {
+	left: 34%;
+}
+
+.campaign-bg .image-swiper-button-next {
+	right: 34%;
+}
+
+@media only screen and (max-width: 767px) {
+	.swiper.campaign-swiper .swiper-slide {
+		font-size: 12px;
+	}
+}

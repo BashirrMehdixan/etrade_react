@@ -1,0 +1,171 @@
+{
+    "smartphone": [
+        {
+            "id": 1,
+            "brand": "iPhone",
+            "name": "iPhone 15 Pro Max 512 GB",
+            "color": "Natural Titanium",
+            "price": 4499,
+            "salePrice": 4249,
+            "discount": 10,
+            "display": "6.7 Super Retina XDR OLED, 120Hz",
+            "main": "48 MP, f/1.8, 24mm (wide), 1/1.28\", 1.22µm, dual pixel PDAF, sensor-shift OIS\n12 MP, f/2.8, 120mm (periscope telephoto), 1/3.06\", 1.12µm, dual pixel PDAF, 3D sensor‑shift OIS, 5x optical zoom\n12 MP, f/2.2, 13mm, 120˚ (ultrawide), 1/2.55\", 1.4µm, dual pixel PDAF\nTOF 3D LiDAR scanner (depth)",
+            "front": "12 MP, f/1.9, 23mm (wide), 1/3.6\", PDAF, OIS\nSL 3D, (depth/biometrics sensor)",
+            "chipset": "Apple A17 Pro (3 nm)",
+            "ram": "8 GB",
+            "storage": "512 GB",
+            "battery": "4441mAh",
+            "colors": "Black",
+            "image": "../assets/images/products/15-pro-max.png",
+            "images": [
+                "/assets/images/products/15-pro-max.png",
+                "/assets/images/products/s23.jpg",
+                "/assets/images/products/15-pro-max.png",
+                "/assets/images/products/s23.jpg"
+            ]
+        },
+        {
+            "id": 2,
+            "brand": "iPhone",
+            "name": "iPhone 15 Pro Max 256 GB",
+            "color": "Natural Blue",
+            "storage": "256 GB",
+            "ram": "8 GB",
+            "display": "6.7 Super Retina XDR OLED, 120Hz",
+            "main": "48 Mp + 12Mp + 12Mp",
+            "front": "12Mp",
+            "chipset": "Apple A17 Pro (3 nm)",
+            "price": 3949,
+            "salePrice": 3659,
+            "discount": 10,
+            "image": "../assets/images/products/15-pro-max.png",
+            "images": [
+                "/assets/images/products/15-pro-max.png",
+                "/assets/images/products/s23.jpg",
+                "/assets/images/products/15-pro-max.png",
+                "/assets/images/products/s23.jpg"
+            ],
+            "battery": "4441mAh",
+            "colors": "Blue"
+        },
+        {
+            "id": 3,
+            "brand": "iPhone",
+            "name": "iPhone 15 Pro 256 GB",
+            "color": "Natural White",
+            "display": "6.1 Super Retina XDR Oled",
+            "main": "48 Mp + 12Mp + 12Mp",
+            "front": "12Mp",
+            "storage": "256 GB",
+            "ram": "8 GB",
+            "price": 3599,
+            "salePrice": 3389,
+            "discount": 10,
+            "image": "../assets/images/products/15-pro-max.png",
+            "images": [
+                "/assets/images/products/15-pro-max.png",
+                "/assets/images/products/s23.jpg",
+                "/assets/images/products/15-pro-max.png",
+                "/assets/images/products/s23.jpg"
+            ],
+            "battery": "4441mAh",
+            "colors": "White"
+        },
+        {
+            "id": 4,
+            "brand": "iPhone",
+            "name": "iPhone 15 Pro 128 GB",
+            "storage": "128 GB",
+            "color": "Natural Blue",
+            "ram": "8 GB",
+            "display": "6.1 Super Retina XDR OLED, 120Hz",
+            "main": "48 Mp + 12Mp + 12Mp",
+            "front": "12Mp",
+            "chipset": "Apple A17 Pro (3 nm)",
+            "price": 3349,
+            "salePrice": 3089,
+            "discount": 10,
+            "image": "../assets/images/products/15-pro-max.png",
+            "images": [
+                "/assets/images/products/15-pro-max.png",
+                "/assets/images/products/s23.jpg",
+                "/assets/images/products/15-pro-max.png",
+                "/assets/images/products/s23.jpg"
+            ],
+            "battery": "4441mAh",
+            "colors": "Blue"
+        },
+        {
+            "id": 5,
+            "brand": "Samsung",
+            "name": "Samsung Galaxy S24 Ultra",
+            "color": "Green",
+            "display": "6.8 Dynamic Amoled, 120Hz",
+            "main": "200 Mp + 12 Mp + 8 Mp + 5 Mp",
+            "front": "32 Mp",
+            "chipset": "Snapdragons Gen 2",
+            "storage": "256 GB",
+            "ram": "12 GB",
+            "price": 3599,
+            "salePrice": 3389,
+            "discount": 10,
+            "image": "../assets/images/products/s23-ultra.jpg",
+            "images": [
+                "/assets/images/products/15-pro-max.png",
+                "/assets/images/products/s23.jpg",
+                "/assets/images/products/15-pro-max.png",
+                "/assets/images/products/s23.jpg"
+            ],
+            "battery": "5000mAh",
+            "colors": "Green"
+        },
+        {
+            "id": 6,
+            "brand": "Samsung",
+            "name": "Samsung Galaxy S24+",
+            "color": "Lawanda",
+            "display": "6.8 Dynamic Amoled, 120Hz",
+            "main": "200 Mp + 12 Mp + 8 Mp + 5 Mp",
+            "front": "32 Mp",
+            "chipset": "Snapdragons Gen 2",
+            "storage": "256 GB",
+            "ram": "12 GB",
+            "price": 3099,
+            "salePrice": 2989,
+            "discount": 10,
+            "image": "../assets/images/products/s23-plus.jpg",
+            "images": [
+                "/assets/images/products/15-pro-max.png",
+                "/assets/images/products/s23.jpg",
+                "/assets/images/products/15-pro-max.png",
+                "/assets/images/products/s23.jpg"
+            ],
+            "battery": "4500mAh",
+            "colors": "Lawanda"
+        },
+        {
+            "id": 7,
+            "brand": "Samsung",
+            "name": "Samsung Galaxy S24",
+            "color": "Black",
+            "display": "6.1 Dynamic Amoled, 120Hz",
+            "main": "64 Mp + 12 Mp + 8 Mp + 5 Mp",
+            "front": "32 Mp",
+            "chipset": "Snapdragons Gen 2",
+            "storage": "128 GB",
+            "ram": "8 GB",
+            "price": 2499,
+            "salePrice": 0,
+            "discount": 0,
+            "image": "../assets/images/products/s23.jpg",
+            "images": [
+                "/assets/images/products/15-pro-max.png",
+                "/assets/images/products/s23.jpg",
+                "/assets/images/products/15-pro-max.png",
+                "/assets/images/products/s23.jpg"
+            ],
+            "battery": "3500mAh",
+            "colors": "Black"
+        }
+    ]
+}

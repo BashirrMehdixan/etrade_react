@@ -1,0 +1,82 @@
+.breadcrumb-section {
+	background-color: #f8f8f8;
+}
+
+.breadcrumb-block {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 40px 0;
+}
+
+.breadcrumb-block .breadcrumb-left .breadcrumb-nav {
+	display: flex;
+	align-items: center;
+}
+
+.breadcrumb-block .breadcrumb-left .breadcrumb-nav .nav-item {
+	position: relative;
+	color: #999;
+	font-weight: 500;
+	font-size: 16px;
+	padding: 0 15px;
+	margin-bottom: 15px;
+	transition: .5s;
+	text-transform: capitalize;
+}
+
+.breadcrumb-block .breadcrumb-left .breadcrumb-nav .nav-item:not(.active):hover {
+	color: #3577f0;
+}
+
+.breadcrumb-block .breadcrumb-left .breadcrumb-nav .nav-item.active {
+	color: #3577f0;
+}
+
+.breadcrumb-block .breadcrumb-left .breadcrumb-nav .nav-item:not(:last-child)::after {
+	position: absolute;
+	content: "";
+	width: 2px;
+	height: 90%;
+	top: 2px;
+	right: 0;
+	background: #e5e5e5;
+}
+
+.breadcrumb-block .breadcrumb-left .page-title {
+	font-size: 40px;
+	color: #292930;
+	font-weight: 700;
+	text-transform: capitalize;
+}
+
+.breadcrumb-block .breadcrumb-right .breadcrumb-img {
+	position: relative;
+	z-index: 1;
+}
+
+.breadcrumb-block .breadcrumb-right .breadcrumb-img::after {
+	content: "";
+	height: 110px;
+	width: 110px;
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	top: -10px;
+	right: 60px;
+	z-index: -1;
+}
+
+.breadcrumb-block .breadcrumb-right .breadcrumb-img img {
+	max-width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+	.breadcrumb-block .breadcrumb-right .breadcrumb-img {
+		display: none;
+	}
+
+	.breadcrumb-block .breadcrumb-left .breadcrumb-nav .nav-item {
+		font-size: 14px;
+	}
+}

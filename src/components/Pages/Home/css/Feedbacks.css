@@ -1,0 +1,100 @@
+.feedback-section {
+    position: relative;
+    background-color: #f9f3f0;
+    padding: 50px 10px;
+}
+
+.swiper.home-feedback {
+    position: static;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper.home-feedback .swiper-wrapper {
+    position: static;
+}
+
+.swiper.home-feedback .swiper-slide {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper.home-feedback .swiper-slide+.swiper-slide-next {
+    margin-top: 20px;
+}
+
+.swiper.home-feedback .swiper-slide .feed-content {
+    position: relative;
+    color: #777777;
+    font-size: 16px;
+    line-height: 28px;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 50px;
+
+}
+
+.swiper.home-feedback .swiper-slide .feedback-block .feed-content::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 25px solid #fff;
+    border-right: 50px solid rgba(0, 0, 0, 0);
+    left: 130px;
+    bottom: -25px;
+}
+
+.swiper.home-feedback .swiper-slide .feedback-block .feed-user {
+    display: flex;
+    align-items: center;
+}
+
+.swiper.home-feedback .swiper-slide .feedback-block .feed-user .user-img {
+    width: 60px;
+    height: 60px;
+}
+
+.swiper.home-feedback .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper.home-feedback .swiper-slide .feedback-block .feed-user .user-info {
+    margin: 0 20px;
+}
+
+.swiper.home-feedback .swiper-slide .feedback-block .feed-user .user-info p:first-child {
+    font-size: 14px;
+    color: #777777;
+}
+
+.swiper.home-feedback .swiper-slide .feedback-block .feed-user .user-info p:last-child {
+    color: #292930;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .feedback-section .image-swiper-button-prev,
+    .feedback-section .image-swiper-button-next {
+        top: 8% !important
+    }
+
+    .feedback-block {
+        padding: 0 10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .feedback-section .image-swiper-button-prev,
+    .feedback-section .image-swiper-button-next {
+        top: 6% !important;
+    }
+}

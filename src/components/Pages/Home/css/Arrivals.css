@@ -1,0 +1,34 @@
+.swiper.new-arrival-swiper .swiper-wrapper {
+    margin: 30px 0;
+}
+
+.swiper.new-arrival-swiper .swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-arrival-swiper .product-img {
+    border-radius: 50%;
+}
+
+.new-arrival-swiper .product-img img {
+    width: 80%;
+}
+
+.new-arrival-swiper .product-img .discount {
+    right: 30px;
+}
+
+.new-arrival-swiper .product-prices {
+    justify-content: center;
+}
+
+@media only screen and (max-width: 991px) {
+
+    .home-arrival .image-swiper-button-prev,
+    .home-arrival .image-swiper-button-next {
+        top: 6% !important
+    }
+}
