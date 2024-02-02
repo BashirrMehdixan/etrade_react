@@ -1,5 +1,7 @@
+import { useContext, useState } from 'react';
 import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import { AuthContext } from './context/AuthContext';
 import AOS from 'aos';
 
 // CSS
@@ -48,11 +50,11 @@ function App() {
     document.addEventListener('scroll', () => {
         AOS.refreshHard();
     });
-
-    const currentUser = true;
+    const { currentUser } = useContext(AuthContext);
     var RequireAuth = ({ children }) => {
         return currentUser ? children : <Navigate to="/login" />
     }
+    const [avatarUrl, setAvatarUrl] = useState(null);
     const router = createBrowserRouter(
         createRoutesFromElements(
             <Route path="/" element={<RootLayout />}>
@@ -70,7 +72,7 @@ function App() {
                     <Route path="orders" element={<Orders />} />
                     <Route path="downloads" element={<Downloads />} />
                     <Route path="addresses" element={<Addresses />} />
-                    <Route path="account-details" element={<AccountDetail />} />
+                    <Route path="account-details" element={<AccountDetail updateAvatarUrl={setAvatarUrl} />} />
                 </Route>
                 <Route path="login" element={<Login />} />
                 <Route path="signup" element={<Register />} />

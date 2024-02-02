@@ -1,29 +1,29 @@
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { auth } from "../../../firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import toast from "react-hot-toast";
+import { login } from "../../../firebase";
 import { Helmet } from "react-helmet";
 
 // CSS
 import "./css/SignUp.css";
+import { AuthContext } from "../../../context/AuthContext";
 
 const Login = () => {
     const navigate = useNavigate();
+    const { dispatch } = useContext(AuthContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = e => {
+    const handleLogin = async e => {
         e.preventDefault();
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                console.log(user)
-                navigate("/profile");
+        const user = await login(email, password);
+        if (user) {
+            dispatch({ type: "LOGIN", payload: user });
+            navigate("/profile", {
+                replace: true
             })
-            .catch(e => {
-                toast.error(e)
-            })
+        }
+
     }
     return (
         <>

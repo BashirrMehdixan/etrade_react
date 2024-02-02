@@ -1,5 +1,8 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth"
+import { getFirestore } from "firebase/firestore";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { getStorage } from 'firebase/storage'
+import toast from "react-hot-toast";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -14,6 +17,36 @@ const firebaseConfig = {
 
 
 const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
+export const storage = getStorage(app);
 export const auth = getAuth();
 
+export const login = async (email, password) => {
+    try {
+        const user = await signInWithEmailAndPassword(auth, email, password);
+        toast.success(`Welcome ${email}`);
+        return user
+    } catch (e) {
+        toast.error(e.code);
+    }
+}
+
+export const signup = async (email, password) => {
+    try {
+        const { user } = await createUserWithEmailAndPassword(auth, email, password);
+        toast.success(`Welcome ${email}`);
+        return user;
+    } catch (e) {
+        toast.error(e.code);
+    }
+}
+export const logout = async () => {
+    try {
+        await signOut(auth);
+        toast.success('You logged out successfully');
+        return true
+    } catch (e) {
+        toast.error(e.message);
+    }
+}
 export default app;

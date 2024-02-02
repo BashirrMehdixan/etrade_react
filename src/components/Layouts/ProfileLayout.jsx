@@ -1,4 +1,7 @@
+import { useContext } from "react";
 import { Outlet, NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
+import { logout } from "../../firebase";
 
 // Icons
 import { MdDashboard, MdOutlineShoppingBasket } from "react-icons/md";
@@ -9,8 +12,10 @@ import { IoIosPerson, IoIosLogOut } from "react-icons/io";
 // Breadcrumb
 import Breadcrumb from "./Breadcrumb";
 
-const ProfileLayout = () => {
-    const user = true;
+const ProfileLayout = ({ avatarUrl }) => {
+    const { dispatch } = useContext(AuthContext);
+    const { currentUser } = useContext(AuthContext);
+    console.log(currentUser.user.uid)
     const navigate = useNavigate();
 
     const handleVerification = e => {
@@ -18,24 +23,27 @@ const ProfileLayout = () => {
     }
 
     const handleLogout = async () => {
-        navigate('/login', {
-            replace: true
-        })
+        if (currentUser) {
+            await logout();
+            dispatch({ type: 'LOGOUT', payload: null })
+            navigate('/login', {
+                replace: true
+            })
+        }
     }
     return (
         <>
             <Breadcrumb />
-            {user &&
+            {currentUser &&
                 <div className="container">
                     <div className="profile-detail">
                         <div className="profile-img">
-                            <img src={user.photoURL ? user.photoURL : './assets/images/users/author-1.png'}
-                                alt="Profile" />
+                            <img src={currentUser.user.img ? currentUser.user.img : './assets/images/users/author-1.png'} alt="Profile" />
                         </div>
-                        <p className="user-name">Hello {user.displayName}</p>
+                        <p className="user-name">Hello {currentUser.username}</p>
                         <p className="active-user">eTrade Member Since Jun 2023</p>
                         {
-                            !user.emailVerified &&
+                            !currentUser.emailVerified &&
                             <button onClick={handleVerification} className={'btn btn-blue'}>Verify email</button>
                         }
                     </div>
