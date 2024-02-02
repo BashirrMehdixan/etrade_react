@@ -1,15 +1,23 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../context/AuthContext";
 import { Helmet } from "react-helmet";
+import { logout } from "../../../firebase";
 
 // CSS 
 import "./css/Dashboard.css";
 
 const Dashboard = () => {
     const navigate = useNavigate();
+    const { dispatch } = useContext(AuthContext);
     const handleLogout = async () => {
+        if (dispatch) {
+            await logout();
+            dispatch({ type: "LOGOUT", payload: null });
             navigate('/login', {
                 replace: true
             });
+        }
     }
     return (
         <>

@@ -1,24 +1,81 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { doc, collection, serverTimestamp, setDoc } from "firebase/firestore";
+import { auth, db, storage } from "../../../firebase";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet";
+import { AuthContext } from "../../../context/AuthContext";
 
-const AccountDetail = () => {
-    const { user } = true;
-    const [displayName, setDisplayName] = useState('');
-    const [lastname, setLastname] = useState('');
-    const [country, setCountry] = useState('');
-    const [password, setPassword] = useState('');
-    const [newPassword, setNewPassword] = useState('');
-    const [matchPassword, setMatchPassword] = useState('');
+const AccountDetail = ({ updateAvatarUrl }) => {
+    const { currentUser } = useContext(AuthContext);
     const [avatar, setAvatar] = useState('');
-    const [avatarPreview, setAvatarPreview] = useState(null);
+    const [data, setData] = useState(currentUser);
+    const [perc, setPerc] = useState(null);
 
+    useEffect(() => {
+        const uploadFile = () => {
+            const name = new Date().getTime() + avatar.name;
+            const storageRef = ref(storage, avatar.name)
+            const uploadTask = uploadBytesResumable(storageRef, avatar);
+            uploadTask.on('state_changed',
+                (snapshot) => {
+                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    console.log('Upload is ' + progress + '% done');
+                    setPerc(progress);
+                    switch (snapshot.state) {
+                        case 'paused':
+                            console.log('Upload is paused');
+                            break;
+                        case 'running':
+                            console.log('Upload is running');
+                            break;
+                        default: break;
+                    }
+                },
+                (error) => {
+                    toast.error(error.message)
+                },
+                () => {
+                    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                        setData(prev => ({ ...prev, img: downloadURL }))
+                    });
+                }
+            );
+        }
+
+        avatar && uploadFile();
+    }, [avatar])
+    const handleData = e => {
+        const id = e.target.id;
+        const value = e.target.value;
+        setData({ ...data, [id]: value });
+    }
     const resetPassword = e => {
         e.preventDefault();
     }
-    const updateHandle = e => {
+    const updateHandle = async e => {
         e.preventDefault();
+        try {
+            await setDoc(doc(db, "users", currentUser.user.uid), {
+                firstname: data.firstname,
+                lastname: data.lastname,
+                img: data.img,
+            }, { merge: true });
+            if (avatar) {
+                const storageRef = ref(storage, avatar.name);
+                const uploadTask = uploadBytesResumable(storageRef, avatar);
+                await uploadTask;
+                const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+                setData((prev) => ({ ...prev, img: downloadURL }));
+                updateAvatarUrl(downloadURL);
+            }
+
+            toast.success('Profile updated successfully');
+        } catch (error) {
+            toast.error(error.message);
+        }
     }
+
     return (
         <>
             <Helmet>
@@ -26,7 +83,7 @@ const AccountDetail = () => {
             </Helmet>
             <form onSubmit={updateHandle}>
                 <div className="detail-container">
-                    {/*<div className="form-group form-full img-group">
+                    <div className="form-group form-full img-group">
                         <label className="absolute-item">
                             Avatar
                             <span className="req"></span>
@@ -36,11 +93,11 @@ const AccountDetail = () => {
                                 type="file"
                                 id="avatar"
                                 className="form-item"
-                                onChange={handleAvatarChange}
+                                onChange={e => setAvatar(e.target.files[0])}
                             />
-                            <img src={avatarPreview} alt="" className="avatar-preview"/>
+                            {avatar && <img src={URL.createObjectURL(avatar)} alt="" className="avatar-preview" />}
                         </label>
-                    </div>*/}
+                    </div>
                     <div className="form-group">
                         <label className="absolute-item">
                             Firstname
@@ -48,9 +105,9 @@ const AccountDetail = () => {
                         </label>
                         <input
                             type="text"
+                            id="firstname"
                             className="form-item"
-                            value={displayName}
-                            onChange={(e) => setDisplayName(e.target.value)}
+                            onChange={handleData}
                             placeholder={'Stephen'}
                         />
                     </div>
@@ -61,9 +118,9 @@ const AccountDetail = () => {
                         </label>
                         <input
                             type="text"
+                            id="lastname"
                             className="form-item"
-                            value={lastname}
-                            onChange={(e) => setLastname(e.target.value)}
+                            onChange={handleData}
                             placeholder={'Strange'} />
                     </div>
                     <div className="form-group form-full">
@@ -81,7 +138,7 @@ const AccountDetail = () => {
                         </p>
                     </div>
                 </div>
-                <button type="submit" className="btn btn-blue">Save changes</button>
+                <button disabled={!perc == null && perc < 100} type="submit" className="btn btn-blue">Save changes</button>
             </form>
             <form onSubmit={resetPassword}>
                 <div className="detail-container">
@@ -91,8 +148,7 @@ const AccountDetail = () => {
                         <input
                             type="password"
                             className="form-item"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
+                            onChange={handleData}
                         />
                     </div>
                     <div className="form-group form-full">
@@ -100,8 +156,7 @@ const AccountDetail = () => {
                         <input
                             type="password"
                             className="form-item"
-                            value={newPassword}
-                            onChange={(e) => setNewPassword(e.target.value)}
+                            onChange={handleData}
                         />
                     </div>
                     <div className="form-group form-full">
@@ -109,8 +164,7 @@ const AccountDetail = () => {
                         <input
                             type="password"
                             className="form-item"
-                            value={matchPassword}
-                            onChange={(e) => setMatchPassword(e.target.value)}
+                            onChange={handleData}
                         />
                     </div>
                 </div>

@@ -1,24 +1,43 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { doc, collection, serverTimestamp, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { signup, db } from "../../../firebase";
+import { AuthContext } from "../../../context/AuthContext";
 
 // CSS
 import "./css/SignUp.css";
 
 const Register = () => {
     const navigate = useNavigate();
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [email, setEmail] = useState("");
+    const { dispatch } = useContext(AuthContext)
+    const [data, setData] = useState({});
+
+    const handleInput = e => {
+        const id = e.target.id;
+        const value = e.target.value;
+        setData({ ...data, [id]: value });
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        navigate("/profile",
-            {
-                replace: true
-            }
-        )
+        const user = await signup(data.email, data.password);
+        const usersCollection = collection(db, 'users');
+        const userDocRef = doc(usersCollection, user.uid);
+
+        await setDoc(userDocRef, {
+            ...data,
+            timeStamp: serverTimestamp()
+        });
+
+        if (user) {
+            dispatch({ type: "LOGIN", payload: user })
+            navigate("/profile",
+                {
+                    replace: true
+                })
+        }
     }
     return (
         <>
@@ -50,8 +69,8 @@ const Register = () => {
                                     <input
                                         type="text"
                                         className="form-item"
-                                        value={username}
-                                        onChange={(e) => setUsername(e.target.value)}
+                                        id="username"
+                                        onChange={handleInput}
                                     />
                                 </div>
                                 <div className="form-group">
@@ -61,9 +80,9 @@ const Register = () => {
                                     </label>
                                     <input
                                         type="email"
+                                        id="email"
                                         className="form-item"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
+                                        onChange={handleInput}
                                     />
                                 </div>
                                 <div className="form-group">
@@ -74,8 +93,8 @@ const Register = () => {
                                     <input
                                         type="password"
                                         className="form-item"
-                                        value={password}
-                                        onChange={(e) => setPassword(e.target.value)}
+                                        id="password"
+                                        onChange={handleInput}
                                     />
                                 </div>
                                 <button type="submit" className="btn btn-blue">
