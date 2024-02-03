@@ -9,24 +9,24 @@ import './App.css';
 import 'aos/dist/aos.css';
 
 // Layouts
-import RootLayout from "./components/Layouts/RootLayout";
-import ProfileLayout from './components/Layouts/ProfileLayout';
-import ProductsLayout from "./components/Layouts/ProductsLayout";
+import RootLayout from "./components/layouts/RootLayout";
+import ProfileLayout from './components/layouts/ProfileLayout';
+import ProductsLayout from "./components/layouts/ProductsLayout";
 
 // Pages
-import Home from './components/Pages/Home/Home';
-import AllProducts, { Products } from './components/Pages/Products/AllProducts';
-import ProductDetail, { productDetailLoader } from "./components/Pages/Products/ProductDetail";
-import Wishlist from "./components/Pages/Profile/Wishlist";
-import Cart from './components/Pages/Profile/Cart';
-import Register from './components/Pages/Profile/Register';
-import Login from './components/Pages/Profile/Login';
-import Dashboard from "./components/Pages/Profile/Dashboard";
-import Orders from './components/Pages/Profile/Orders';
-import Downloads from './components/Pages/Profile/Downloads';
-import Addresses from "./components/Pages/Profile/Addresses";
-import AccountDetail from "./components/Pages/Profile/AccountDetail";
-import NotFound from "./components/Pages/NotFound";
+import Home from './components/pages/home/Home';
+import AllProducts, { Products } from './components/pages/products/AllProducts';
+import ProductDetail, { productDetailLoader } from "./components/pages/products/ProductDetail";
+import Wishlist from "./components/pages/profile/Wishlist";
+import Cart from './components/pages/profile/Cart';
+import Register from './components/pages/profile/Register';
+import Login from './components/pages/profile/Login';
+import Dashboard from "./components/pages/profile/Dashboard";
+import Orders from './components/pages/profile/Orders';
+import Downloads from './components/pages/profile/Downloads';
+import Addresses from "./components/pages/profile/Addresses";
+import AccountDetail from "./components/pages/profile/AccountDetail";
+import NotFound from "./components/pages/NotFound";
 
 function App() {
     AOS.init({

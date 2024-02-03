@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import { Helmet } from "react-helmet";
 
 // Layouts
-import HomeServices from "../Home/HomeServices";
+import HomeServices from "../home/HomeServices";
 
 // Icons
 import { CiStar } from "react-icons/ci";
