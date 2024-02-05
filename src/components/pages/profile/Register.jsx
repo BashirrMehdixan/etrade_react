@@ -23,11 +23,12 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const user = await signup(data.email, data.password);
-        const usersCollection = collection(db, 'users');
-        const userDocRef = doc(usersCollection, user.uid);
+        console.log(user.uid)
+        const userDocRef = doc(collection(db, 'users'), user.uid);
 
         await setDoc(userDocRef, {
             ...data,
+            uid: user.uid,
             firstname: null,
             lastname: null,
             img: "./assets/images/users/author-1.png",

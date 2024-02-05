@@ -60,10 +60,10 @@ function App() {
         if (currentUser) {
             const fetchData = async () => {
                 try {
-                    const docSnapshot = await getDoc(doc(db, 'users', currentUser.user.uid));
+                    const docSnapshot = await getDoc(doc(db, 'users', currentUser.uid));
                     setData(docSnapshot.data())
                 } catch (e) {
-                    toast.error(e);
+                    console.log(e);
                 }
             }
             fetchData();
