@@ -13,7 +13,7 @@ import './App.css';
 import 'aos/dist/aos.css';
 
 // Layouts
-import RootLayout from "./components/layouts/RootLayout";
+import RootLayout from "./components/layouts/RootLayout"
 import ProfileLayout from './components/layouts/ProfileLayout';
 import ProductsLayout from "./components/layouts/ProductsLayout";
 
