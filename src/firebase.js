@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updatePassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updatePassword, sendEmailVerification } from "firebase/auth";
 import { getStorage } from 'firebase/storage'
 import toast from "react-hot-toast";
 
@@ -53,6 +53,15 @@ export const passwordUpdate = async (password) => {
         await updatePassword(auth.currentUser, password)
         toast.success('Password changed successfully');
         return true;
+    } catch (e) {
+        toast.error(e.message);
+    }
+}
+
+export const accountVerify = async () => {
+    try {
+        await sendEmailVerification(auth.currentUser);
+        toast.success(`Verification mail will be sent to ${auth.currentUser.email} email address`);
     } catch (e) {
         toast.error(e.message);
     }

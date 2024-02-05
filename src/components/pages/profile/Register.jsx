@@ -23,7 +23,6 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const user = await signup(data.email, data.password);
-        console.log(user.uid)
         const userDocRef = doc(collection(db, 'users'), user.uid);
 
         await setDoc(userDocRef, {
