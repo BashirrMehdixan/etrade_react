@@ -34,7 +34,6 @@ const AccountDetail = ({ accountData }) => {
     }
     const updateHandle = async (e) => {
         e.preventDefault();
-
         try {
             await setDoc(doc(db, "users", currentUser.uid), {
                 firstname: data.firstname,
@@ -50,7 +49,7 @@ const AccountDetail = ({ accountData }) => {
                 await setDoc(doc(db, "users", currentUser.uid), { img: downloadURL }, { merge: true });
                 accountData.img = downloadURL;
             }
-
+            window.location.reload();
             toast.success("Profile updated successfully");
         } catch (error) {
             toast.error(error.message);

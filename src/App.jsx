@@ -1,6 +1,6 @@
 import { useEffect, useContext, useState } from 'react';
 import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider, Navigate } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import { AuthContext } from './context/AuthContext';
 
 import { getDoc, doc } from "firebase/firestore";

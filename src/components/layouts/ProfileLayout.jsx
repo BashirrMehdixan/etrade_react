@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Outlet, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { logout } from "../../firebase";
+import { logout, accountVerify } from "../../firebase";
 
 // Icons
 import { MdDashboard, MdOutlineShoppingBasket } from "react-icons/md";
@@ -18,10 +18,6 @@ const ProfileLayout = ({ accountData }) => {
 
     const navigate = useNavigate();
 
-    const handleVerification = e => {
-        e.preventDefault();
-    }
-
     const handleLogout = async () => {
         if (currentUser) {
             await logout();
@@ -30,6 +26,10 @@ const ProfileLayout = ({ accountData }) => {
                 replace: true
             })
         }
+    }
+
+    const sendMail = async () => {
+        await accountVerify()
     }
     return (
         <>
@@ -44,7 +44,10 @@ const ProfileLayout = ({ accountData }) => {
                         <p className="active-user">eTrade Member Since Jun 2023</p>
                         {
                             !currentUser.emailVerified &&
-                            <button onClick={handleVerification} className={'btn btn-blue'}>Verify email</button>
+                            <button
+
+                                onClick={sendMail}
+                                className={currentUser.emailVerified ? 'btn btn-blue' : 'none'}>Verify email</button>
                         }
                     </div>
                     <div className="account-container">
