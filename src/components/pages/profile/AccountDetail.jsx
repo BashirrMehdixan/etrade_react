@@ -24,7 +24,7 @@ const AccountDetail = ({ accountData }) => {
     const resetPassword = async e => {
         e.preventDefault();
         if (data.password || data.matchPassword || data.newPassword || data.newPassword !== data.password || data.newPassword === data.matchPassword) {
-            await setDoc(doc(db, "users", currentUser.user.uid), {
+            await setDoc(doc(db, "users", currentUser.uid), {
                 password: data.newPassword
             }, { merge: true })
             await passwordUpdate(data.newPassword);
@@ -36,7 +36,7 @@ const AccountDetail = ({ accountData }) => {
         e.preventDefault();
 
         try {
-            await setDoc(doc(db, "users", currentUser.user.uid), {
+            await setDoc(doc(db, "users", currentUser.uid), {
                 firstname: data.firstname,
                 lastname: data.lastname,
                 img: data.img,
@@ -44,10 +44,10 @@ const AccountDetail = ({ accountData }) => {
             }, { merge: true });
 
             if (avatar) {
-                const storageRef = ref(storage, `avatars/${currentUser.user.uid}`);
+                const storageRef = ref(storage, `avatars/${currentUser.uid}`);
                 await uploadBytesResumable(storageRef, avatar);
                 const downloadURL = await getDownloadURL(storageRef);
-                await setDoc(doc(db, "users", currentUser.user.uid), { img: downloadURL }, { merge: true });
+                await setDoc(doc(db, "users", currentUser.uid), { img: downloadURL }, { merge: true });
                 accountData.img = downloadURL;
             }
 
