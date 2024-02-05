@@ -28,6 +28,10 @@ const Register = () => {
 
         await setDoc(userDocRef, {
             ...data,
+            firstname: null,
+            lastname: null,
+            img: "./assets/images/users/author-1.png",
+            country: null,
             timeStamp: serverTimestamp()
         });
 

@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updatePassword } from "firebase/auth";
 import { getStorage } from 'firebase/storage'
 import toast from "react-hot-toast";
 
@@ -24,7 +24,6 @@ export const auth = getAuth();
 export const login = async (email, password) => {
     try {
         const user = await signInWithEmailAndPassword(auth, email, password);
-        toast.success(`Welcome ${email}`);
         return user
     } catch (e) {
         toast.error(e.code);
@@ -34,7 +33,6 @@ export const login = async (email, password) => {
 export const signup = async (email, password) => {
     try {
         const { user } = await createUserWithEmailAndPassword(auth, email, password);
-        toast.success(`Welcome ${email}`);
         return user;
     } catch (e) {
         toast.error(e.code);
@@ -45,6 +43,16 @@ export const logout = async () => {
         await signOut(auth);
         toast.success('You logged out successfully');
         return true
+    } catch (e) {
+        toast.error(e.message);
+    }
+}
+
+export const passwordUpdate = async (password) => {
+    try {
+        await updatePassword(auth.currentUser, password)
+        toast.success('Password changed successfully');
+        return true;
     } catch (e) {
         toast.error(e.message);
     }

@@ -12,10 +12,10 @@ import { IoIosPerson, IoIosLogOut } from "react-icons/io";
 // Breadcrumb
 import Breadcrumb from "./Breadcrumb";
 
-const ProfileLayout = ({ avatarUrl }) => {
+const ProfileLayout = ({ accountData }) => {
     const { dispatch } = useContext(AuthContext);
     const { currentUser } = useContext(AuthContext);
-    console.log(currentUser.user.uid)
+
     const navigate = useNavigate();
 
     const handleVerification = e => {
@@ -38,9 +38,9 @@ const ProfileLayout = ({ avatarUrl }) => {
                 <div className="container">
                     <div className="profile-detail">
                         <div className="profile-img">
-                            <img src={currentUser.user.img ? currentUser.user.img : './assets/images/users/author-1.png'} alt="Profile" />
+                            <img src={accountData.img ? accountData.img : './assets/images/users/author-2.png'} alt="Profile" />
                         </div>
-                        <p className="user-name">Hello {currentUser.username}</p>
+                        <p className="user-name">Hello {accountData.firstname ? accountData.firstname : accountData.username}</p>
                         <p className="active-user">eTrade Member Since Jun 2023</p>
                         {
                             !currentUser.emailVerified &&
