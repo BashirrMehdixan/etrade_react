@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import { Helmet } from "react-helmet";
 
 // Layouts
-import Breadcrumb from "../../layouts/Breadcrumb";
+import Breadcrumb from "../../layout/Breadcrumb";
 
 // Icons
 import { FaRegEye, FaRegHeart } from "react-icons/fa";

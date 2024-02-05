@@ -13,9 +13,9 @@ import './App.css';
 import 'aos/dist/aos.css';
 
 // Layouts
-import RootLayout from "./components/layouts/RootLayout"
-import ProfileLayout from './components/layouts/ProfileLayout';
-import ProductsLayout from "./components/layouts/ProductsLayout";
+import RootLayout from "./components/layout/RootLayout"
+import ProfileLayout from './components/layout/ProfileLayout';
+import ProductsLayout from "./components/layout/ProductsLayout";
 
 // Pages
 import Home from './components/pages/home/Home';
