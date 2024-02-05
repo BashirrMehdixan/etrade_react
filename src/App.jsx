@@ -1,7 +1,11 @@
-import { useContext, useState } from 'react';
+import { useEffect, useContext, useState } from 'react';
 import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider, Navigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 import { Toaster } from 'react-hot-toast';
 import { AuthContext } from './context/AuthContext';
+
+import { getDoc, doc } from "firebase/firestore";
+import { db } from './firebase';
 import AOS from 'aos';
 
 // CSS
@@ -51,10 +55,23 @@ function App() {
         AOS.refreshHard();
     });
     const { currentUser } = useContext(AuthContext);
+    const [data, setData] = useState([])
+    useEffect(() => {
+        if (currentUser) {
+            const fetchData = async () => {
+                try {
+                    const docSnapshot = await getDoc(doc(db, 'users', currentUser.user.uid));
+                    setData(docSnapshot.data())
+                } catch (e) {
+                    toast.error(e);
+                }
+            }
+            fetchData();
+        }
+    }, []);
     var RequireAuth = ({ children }) => {
         return currentUser ? children : <Navigate to="/login" />
     }
-    const [avatarUrl, setAvatarUrl] = useState(null);
     const router = createBrowserRouter(
         createRoutesFromElements(
             <Route path="/" element={<RootLayout />}>
@@ -65,14 +82,14 @@ function App() {
                 </Route>
                 <Route path="/profile" element={
                     <RequireAuth>
-                        <ProfileLayout />
+                        <ProfileLayout accountData={data} />
                     </RequireAuth>
                 }>
                     <Route index element={<Dashboard />} />
                     <Route path="orders" element={<Orders />} />
                     <Route path="downloads" element={<Downloads />} />
                     <Route path="addresses" element={<Addresses />} />
-                    <Route path="account-details" element={<AccountDetail updateAvatarUrl={setAvatarUrl} />} />
+                    <Route path="account-details" element={<AccountDetail accountData={data} />} />
                 </Route>
                 <Route path="login" element={<Login />} />
                 <Route path="signup" element={<Register />} />
