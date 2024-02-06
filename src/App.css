@@ -538,7 +538,6 @@ button.btn-inc,
     border-radius: 50%;
     left: 0;
     top: 0;
-    border: 1px solid;
     margin-right: 5px;
 }
 
@@ -576,6 +575,13 @@ button.btn-inc,
 
 .image-swiper-button-prev {
     right: 70px;
+}
+
+.preferences-block .preference-item {
+    width: 24%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Swiper arrows end */

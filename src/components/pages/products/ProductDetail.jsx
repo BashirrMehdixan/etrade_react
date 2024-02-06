@@ -340,10 +340,4 @@ const ProductDetail = () => {
         </>
     )
 }
-
-export const productDetailLoader = async ({ params }) => {
-    const { id } = params;
-    const res = await fetch('https://databases-0ekr.onrender.com/smartphone/?id=' + id);
-    return (res.json());
-}
 export default ProductDetail;

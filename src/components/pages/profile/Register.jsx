@@ -30,7 +30,7 @@ const Register = () => {
             uid: user.uid,
             firstname: null,
             lastname: null,
-            img: "./assets/images/users/author-1.png",
+            img: "./assets/images/users/user.png",
             country: null,
             timeStamp: serverTimestamp()
         });

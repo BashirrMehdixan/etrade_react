@@ -38,7 +38,7 @@ const ProfileLayout = ({ accountData }) => {
                 <div className="container">
                     <div className="profile-detail">
                         <div className="profile-img">
-                            <img src={accountData.img ? accountData.img : './assets/images/users/author-2.png'} alt="Profile" />
+                            <img src={accountData.img} alt="Profile" />
                         </div>
                         <p className="user-name">Hello {accountData.firstname ? accountData.firstname : accountData.username}</p>
                         <p className="active-user">eTrade Member Since Jun 2023</p>
