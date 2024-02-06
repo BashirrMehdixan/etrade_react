@@ -1,6 +1,6 @@
 import { useEffect, useContext, useState } from 'react';
 import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider, Navigate } from 'react-router-dom';
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 import { AuthContext } from './context/AuthContext';
 
 import { getDoc, doc } from "firebase/firestore";
@@ -18,8 +18,8 @@ import ProductsLayout from "./components/layouts/ProductsLayout";
 
 // Pages
 import Home from './components/pages/home/Home';
-import AllProducts, { Products } from './components/pages/products/AllProducts';
-import ProductDetail, { productDetailLoader } from "./components/pages/products/ProductDetail";
+import AllProducts from './components/pages/products/AllProducts';
+import ProductDetail from "./components/pages/products/ProductDetail";
 import Wishlist from "./components/pages/profile/Wishlist";
 import Cart from './components/pages/profile/Cart';
 import Register from './components/pages/profile/Register';
@@ -30,6 +30,9 @@ import Downloads from './components/pages/profile/Downloads';
 import Addresses from "./components/pages/profile/Addresses";
 import AccountDetail from "./components/pages/profile/AccountDetail";
 import NotFound from "./components/pages/NotFound";
+
+// Loaders
+import { Smartphones, smartphoneDetail } from './data/databases';
 
 function App() {
     AOS.init({
@@ -74,10 +77,10 @@ function App() {
     const router = createBrowserRouter(
         createRoutesFromElements(
             <Route path="/" element={<RootLayout />}>
-                <Route index loader={Products} element={<Home />} />
+                <Route index loader={Smartphones} element={<Home />} />
                 <Route path="/products" element={<ProductsLayout />}>
-                    <Route index loader={Products} element={<AllProducts />} />
-                    <Route path=":id" loader={productDetailLoader} element={<ProductDetail />} />
+                    <Route index loader={Smartphones} element={<AllProducts />} />
+                    <Route path=":id" loader={smartphoneDetail} element={<ProductDetail />} />
                 </Route>
                 <Route path="/profile" element={
                     <RequireAuth>

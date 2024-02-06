@@ -179,9 +179,4 @@ const AllProducts = () => {
         </>
     );
 }
-
-export const Products = async () => {
-    const res = await fetch('https://databases-0ekr.onrender.com/smartphone');
-    return res.json();
-}
 export default AllProducts;
