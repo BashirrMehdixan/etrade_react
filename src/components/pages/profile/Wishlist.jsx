@@ -54,11 +54,11 @@ const Wishlist = () => {
                                             </td>
                                             <td className="product-img">
                                                 <Link to={`/products/${item.id}`}>
-                                                    <img src={item.image} alt={item.name} />
+                                                    <img src={item.thumbnail} alt={item.title} />
                                                 </Link>
                                             </td>
                                             <td className="product-name">
-                                                <Link to={`/products/${item.id}`}>{item.name}</Link>
+                                                <Link to={`/products/${item.id}`}>{item.title}</Link>
                                             </td>
                                             <td className="price">${item.price}</td>
                                             <td className="stock-status">In stock</td>

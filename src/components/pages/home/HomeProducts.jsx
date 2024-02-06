@@ -20,15 +20,13 @@ import { addToWishlist } from "../../../features/wishlist";
 
 const HomeProducts = () => {
     const { id } = useParams();
-    let products = useLoaderData();
+    let products = useLoaderData().products;
     const dispatch = useDispatch();
     const addCart = (product) => {
         dispatch(addToCart(product));
-        toast.success(`${product.name} added to cart!`);
     }
     const addWish = (product) => {
         dispatch(addToWishlist(product));
-        toast.success(`${product.name} added to wishlist!`);
     }
     return (
         <>

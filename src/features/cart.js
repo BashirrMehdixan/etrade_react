@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
+import toast from "react-hot-toast";
 
 const initialState = {
     items: [],
@@ -11,10 +12,12 @@ const cart = createSlice({
     reducers: {
         addToCart(state, action) {
             const existingItem = state.items.find((item) => item.id === action.payload.id);
+            const existingItemSalePrice = action.payload.price - (action.payload.price * (action.payload.discountPercentage) / 100);
             if (existingItem) {
                 existingItem.quantity += 1;
-                if (!existingItem.salePrice) {
-                    existingItem.total += existingItem.salePrice;
+                toast.success(`${existingItem.title} added to cart!`);
+                if (!existingItem.discountPercentage) {
+                    existingItem.total += existingItemSalePrice;
                 } else {
                     existingItem.total += existingItem.price;
                 };
@@ -22,7 +25,7 @@ const cart = createSlice({
                 const newItem = {
                     ...action.payload,
                     quantity: 1,
-                    total: action.payload.salePrice === 0 ? action.payload.price : action.payload.salePrice,
+                    total: action.payload.discountPercentage === 0 ? action.payload.price : existingItemSalePrice,
                 };
                 state.items.push(newItem);
             }
@@ -36,6 +39,7 @@ const cart = createSlice({
             if (itemIndex !== -1) {
                 const removedItem = state.items[itemIndex];
                 const removedItemCount = removedItem.quantity;
+                toast.success(`${removedItem.title} removed from cart!`);
 
                 state.items.splice(itemIndex, 1);
                 state.count -= removedItemCount;
@@ -43,26 +47,29 @@ const cart = createSlice({
             }
         },
         increment: (state, action) => {
-            const { id } = action.payload;
+            const {id} = action.payload;
             const existingItem = state.items.find((item) => item.id === id);
+            const existingItemSalePrice = existingItem.price - (existingItem.price * (existingItem.discountPercentage) / 100);
             if (existingItem) {
-                if (!existingItem.salePrice) {
+                if (!existingItem.discountPercentage) {
                     existingItem.total += existingItem.price;
                 } else {
-                    existingItem.total += existingItem.salePrice;
+                    existingItem.total += existingItemSalePrice;
+                    console.log(existingItemSalePrice);
                 }
                 existingItem.quantity += 1;
                 state.count += 1;
             }
         },
         decrement: (state, action) => {
-            const { id } = action.payload;
+            const {id} = action.payload;
             const existingItem = state.items.find((item) => item.id === id);
+            const existingItemSalePrice = existingItem.price - (existingItem.price * (existingItem.discountPercentage) / 100);
             if (existingItem && existingItem.quantity > 1) {
-                if (!existingItem.salePrice) {
+                if (!existingItem.discountPercentage) {
                     existingItem.total -= existingItem.price;
                 } else {
-                    existingItem.total -= existingItem.salePrice;
+                    existingItem.total -= existingItemSalePrice;
                 }
                 existingItem.quantity -= 1;
                 state.count -= 1;
@@ -71,6 +78,6 @@ const cart = createSlice({
     }
 })
 
-export const { addToCart, removeFromCart, increment, decrement } = cart.actions;
+export const {addToCart, removeFromCart, increment, decrement} = cart.actions;
 
 export default cart.reducer;

@@ -104,13 +104,13 @@ const Navbar = () => {
                                 <NavLink to="/">Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to="/products">Shop</NavLink>
+                                <NavLink to="products">Shop</NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink to="/pages">Pages</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to="/about">About</NavLink>
+                                <NavLink to="/about-us">About</NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink to="/blog">Blog</NavLink>

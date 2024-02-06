@@ -1,27 +1,27 @@
-import { useState } from "react";
-import { Link, useLoaderData, useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import {useState} from "react";
+import {Link, useLoaderData, useParams} from "react-router-dom";
+import {useDispatch} from "react-redux";
 import toast from "react-hot-toast";
-import { Helmet } from "react-helmet";
+import {Helmet} from "react-helmet";
 
 // Layouts
 import Breadcrumb from "../../layouts/Breadcrumb";
 
 // Icons
-import { FaRegEye, FaRegHeart } from "react-icons/fa";
+import {FaRegEye, FaRegHeart} from "react-icons/fa";
 
 // Actions
-import { addToWishlist } from "../../../features/wishlist";
-import { addToCart } from "../../../features/cart";
+import {addToWishlist} from "../../../features/wishlist";
+import {addToCart} from "../../../features/cart";
 
 // CSS
 import "./css/AllProducts.css";
 
-const AllProducts = () => {
-    const { id } = useParams();
+const Smartphones = () => {
+    const {id} = useParams();
     const [openCategories, setOpenCategories] = useState({});
     const dispatch = useDispatch();
-    const products = useLoaderData();
+    const products = useLoaderData().products;
     const catSlide = (category) => {
         setOpenCategories(prevState => ({
             ...prevState,
@@ -35,32 +35,30 @@ const AllProducts = () => {
     const uniqueColors = Array.from(new Set(products.map(product => product.colors)));
     const addToWish = (product) => {
         dispatch(addToWishlist(product))
-        toast.success(`${product.name} added to wishlist!`);
     }
     const addCart = (product) => {
         dispatch(addToCart(product));
-        toast.success(`${product.name} added to cart!`);
     }
     return (
         <>
             <Helmet>
                 <title>All Products | eTrade</title>
             </Helmet>
-            <Breadcrumb products={products} />
+            <Breadcrumb products={products}/>
             <section className="products-section">
                 <div className="container">
                     <div className="products-block">
                         <div className="products-left products-item">
                             <div className="product-category">
                                 <div className={`category-title ${openCategories['Model'] ? 'active' : ''}`}
-                                    onClick={() => catSlide('Model')}>
+                                     onClick={() => catSlide('Model')}>
                                     <span>Model</span>
                                 </div>
                                 <ul className={`category-list ${openCategories['Model'] ? 'open' : ''}`}>
                                     {uniqueModels.map((model, index) => (
                                         <li key={index}>
                                             <label className="custom-radio">
-                                                <input type="radio" name="brand" />
+                                                <input type="radio" name="brand"/>
                                                 <span className="checkmark"></span>
                                                 <span className="cat-name">{model}</span>
                                             </label>
@@ -70,14 +68,14 @@ const AllProducts = () => {
                             </div>
                             <div className="product-category">
                                 <div className={`category-title ${openCategories['Storage'] ? 'active' : ''}`}
-                                    onClick={() => catSlide('Storage')}>
+                                     onClick={() => catSlide('Storage')}>
                                     <span>Storage</span>
                                 </div>
                                 <ul className={`category-list ${openCategories['Storage'] ? 'open' : ''}`}>
                                     {uniqueStorages.map((storage, index) => (
                                         <li key={index}>
                                             <label className="custom-radio">
-                                                <input type="radio" name="storage" />
+                                                <input type="radio" name="storage"/>
                                                 <span className="checkmark"></span>
                                                 <span className="cat-name">{storage}</span>
                                             </label>
@@ -87,14 +85,14 @@ const AllProducts = () => {
                             </div>
                             <div className="product-category">
                                 <div className={`category-title ${openCategories['RAM'] ? 'active' : ''}`}
-                                    onClick={() => catSlide('RAM')}>
+                                     onClick={() => catSlide('RAM')}>
                                     <span>RAM</span>
                                 </div>
                                 <ul className={`category-list ${openCategories['RAM'] ? 'open' : ''}`}>
                                     {uniqueRams.map((ram, index) => (
                                         <li key={index}>
                                             <label className="custom-radio">
-                                                <input type="radio" name="ram" />
+                                                <input type="radio" name="ram"/>
                                                 <span className="checkmark"></span>
                                                 <span className="cat-name">{ram}</span>
                                             </label>
@@ -104,14 +102,14 @@ const AllProducts = () => {
                             </div>
                             <div className="product-category">
                                 <div className={`category-title ${openCategories['Colors'] ? 'active' : ''}`}
-                                    onClick={() => catSlide('Colors')}>
+                                     onClick={() => catSlide('Colors')}>
                                     <span>Colors</span>
                                 </div>
                                 <ul className={`category-list ${openCategories['Colors'] ? 'open' : ''}`}>
                                     {uniqueColors.map((color, index) => (
                                         <li key={index}>
                                             <label className="custom-radio">
-                                                <input type="radio" name="color" />
+                                                <input type="radio" name="color"/>
                                                 <span className="checkmark"></span>
                                                 <span className="cat-name">{color}</span>
                                             </label>
@@ -138,31 +136,31 @@ const AllProducts = () => {
                             <div className="all-products">
                                 {products.map((product, index) => (
                                     <div className="product-item hover-product" key={index}
-                                        id={`product-${product.id}`} data-aos="flip-right">
+                                         id={`product-${product.id}`} data-aos="flip-right">
                                         <Link to={product.id.toString()} className="product-img">
-                                            <img src={product.image} alt={product.name} />
+                                            <img src={product.thumbnail} alt={product.title}/>
                                         </Link>
-                                        <p className={product.discount === 0 ? "none" : "discount"}>{product.discount}%
+                                        <p className={product.discountPercentage === 0 ? "none" : "discount"}>{product.discountPercentage}%
                                             Off</p>
                                         <div className="product-info">
                                             <Link to={product.id.toString()}
-                                                className="product-name">{product.name}
+                                                  className="product-name">{product.title}
                                             </Link>
                                             <div className="product-prices">
-                                                <p className={product.salePrice === 0 ? "none" : "price"}>${product.salePrice}</p>
+                                                <p className={product.discountPercentage === 0 ? "none" : "price"}>${product.price - (product.price * (product.discountPercentage) / 100)}</p>
                                                 <p className={product.salePrice === 0 ? "price" : "price product-price"}>${product.price}</p>
                                             </div>
                                         </div>
                                         <div className="cart-action">
                                             <button className="btn action-btn look-btn">
-                                                <FaRegEye />
+                                                <FaRegEye/>
                                             </button>
                                             <button className="btn cart-btn" onClick={() => addCart(product)}>
                                                 Add to Cart
                                             </button>
                                             <button className="btn action-btn wish-btn"
-                                                onClick={() => addToWish(product)}>
-                                                <FaRegHeart />
+                                                    onClick={() => addToWish(product)}>
+                                                <FaRegHeart/>
                                             </button>
                                         </div>
                                     </div>
@@ -179,4 +177,4 @@ const AllProducts = () => {
         </>
     );
 }
-export default AllProducts;
+export default Smartphones;

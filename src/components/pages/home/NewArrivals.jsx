@@ -1,12 +1,12 @@
-import { Link, useLoaderData, useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import {Link, useLoaderData, useParams} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {Swiper, SwiperSlide} from 'swiper/react';
+import {Navigation} from 'swiper/modules';
 import toast from "react-hot-toast";
 
 // Icons
-import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
-import { FaShoppingBasket, FaRegEye, FaRegHeart } from "react-icons/fa";
+import {IoIosArrowRoundForward, IoIosArrowRoundBack} from "react-icons/io";
+import {FaShoppingBasket, FaRegEye, FaRegHeart} from "react-icons/fa";
 
 // Css
 import 'swiper/css';
@@ -14,28 +14,26 @@ import 'swiper/css/navigation';
 import "./css/Arrivals.css";
 
 // Actions
-import { addToCart } from "../../../features/cart";
-import { addToWishlist } from "../../../features/wishlist";
+import {addToCart} from "../../../features/cart";
+import {addToWishlist} from "../../../features/wishlist";
 
 const NewArrivals = () => {
-    const { id } = useParams();
+    const {id} = useParams();
     const dispatch = useDispatch();
     const addCart = (product) => {
         dispatch(addToCart(product));
-        toast.success(`${product.name} added to cart!`);
     }
     const addWish = (product) => {
         dispatch(addToWishlist(product));
-        toast.success(`${product.name} added to wishlist!`);
     }
-    const products = useLoaderData();
+    const products = useLoaderData().products;
     return (
         <section className="home-arrival">
             <div className="container relative">
                 <div className="head-box products-head" data-aos="fade-down">
                     <p className="best-deal">
                         <span>
-                            <FaShoppingBasket />
+                            <FaShoppingBasket/>
                         </span>
                         Tihs week's
                     </p>
@@ -44,10 +42,10 @@ const NewArrivals = () => {
                     </p>
                 </div>
                 <div className="swiper-product-btn image-swiper-button-next">
-                    <IoIosArrowRoundForward />
+                    <IoIosArrowRoundForward/>
                 </div>
                 <div className="swiper-product-btn image-swiper-button-prev">
-                    <IoIosArrowRoundBack />
+                    <IoIosArrowRoundBack/>
                 </div>
                 <Swiper
                     slidesPerView={1}
@@ -79,14 +77,14 @@ const NewArrivals = () => {
                             <SwiperSlide key={index}>
                                 <div className="product-item">
                                     <Link to={`/products/${product.id}`} className="product-img">
-                                        <img src={product.image} alt={product.name} />
+                                        <img src={product.image} alt={product.name}/>
                                     </Link>
                                     <p className={product.discount === 0 ? "none" : "discount"}>
                                         {product.discount}% Off
                                     </p>
                                     <div className="product-info">
                                         <Link to={`/products/${product.id}`}
-                                            className="product-name">{product.name}</Link>
+                                              className="product-name">{product.name}</Link>
                                         <div className="product-prices">
                                             <p className={"price sale-price"}>
                                                 ${product.salePrice ? product.salePrice : product.price}
@@ -98,13 +96,13 @@ const NewArrivals = () => {
                                     </div>
                                     <div className="cart-action">
                                         <button className="btn action-btn look-btn">
-                                            <FaRegEye />
+                                            <FaRegEye/>
                                         </button>
                                         <button className="btn cart-btn" onClick={() => addCart(product)}>
                                             Add to Cart
                                         </button>
                                         <button className="btn action-btn wish-btn" onClick={() => addWish(product)}>
-                                            <FaRegHeart />
+                                            <FaRegHeart/>
                                         </button>
                                     </div>
                                 </div>

@@ -1,10 +1,10 @@
-export const Smartphones = async () => {
-    const res = await fetch('https://databases-0ekr.onrender.com/smartphone');
+export const SmartphonesData = async () => {
+    const res = await fetch('https://dummyjson.com/products');
     return res.json();
 }
 
-export const smartphoneDetail = async ({ params }) => {
-    const { id } = params;
-    const res = await fetch('https://databases-0ekr.onrender.com/smartphone/?id=' + id);
+export const smartphoneDetail = async ({params}) => {
+    const {id} = params;
+    const res = await fetch('https://dummyjson.com/products/' + id);
     return (res.json());
 }

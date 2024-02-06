@@ -47,7 +47,7 @@ const Cart = () => {
                                             </td>
                                             <td className="product-img">
                                                 <Link to={`/products/${item.id}`}>
-                                                    <img src={item.image} alt={item.name} />
+                                                    <img src={item.thumbnail} alt={item.name} />
                                                 </Link>
                                             </td>
                                             <td className="product-name">

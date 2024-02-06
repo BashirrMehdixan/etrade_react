@@ -17,14 +17,12 @@ import "./css/PopularProducts.css";
 const PopularProducts = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
-    const products = useLoaderData();
+    const products = useLoaderData().products;
     const addCart = (product) => {
         dispatch(addToCart(product));
-        toast.success(`${product.name} added to cart!`);
     }
     const addWish = (product) => {
         dispatch(addToWishlist(product));
-        toast.success(`${product.name} added to wishlist!`);
     }
     return (
         <section className="popular-products">
