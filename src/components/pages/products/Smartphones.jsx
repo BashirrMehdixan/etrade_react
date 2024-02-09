@@ -1,7 +1,6 @@
 import {useState} from "react";
-import {Link, useLoaderData, useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import toast from "react-hot-toast";
 import {Helmet} from "react-helmet";
 
 // Layouts
@@ -15,13 +14,13 @@ import {addToWishlist} from "../../../features/wishlist";
 import {addToCart} from "../../../features/cart";
 
 // CSS
-import "./css/AllProducts.css";
+import "./css/Products.css";
 
-const Smartphones = () => {
+const Smartphones = ({products}) => {
+    console.log(products)
     const {id} = useParams();
     const [openCategories, setOpenCategories] = useState({});
     const dispatch = useDispatch();
-    const products = useLoaderData().products;
     const catSlide = (category) => {
         setOpenCategories(prevState => ({
             ...prevState,

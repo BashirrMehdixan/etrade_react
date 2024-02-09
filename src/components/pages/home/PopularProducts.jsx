@@ -1,23 +1,22 @@
-import { Link, useParams, useLoaderData } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import {Link, useParams, useLoaderData} from "react-router-dom";
+import {useDispatch} from "react-redux";
 import toast from "react-hot-toast";
 
 // Icons
-import { FaStar } from "react-icons/fa";
-import { CiShoppingCart, CiHeart } from "react-icons/ci";
+import {FaStar} from "react-icons/fa";
+import {CiShoppingCart, CiHeart} from "react-icons/ci";
 
 
 // Actions 
-import { addToCart } from "../../../features/cart";
-import { addToWishlist } from "../../../features/wishlist";
+import {addToCart} from "../../../features/cart";
+import {addToWishlist} from "../../../features/wishlist";
 
 // CSS
 import "./css/PopularProducts.css";
 
-const PopularProducts = () => {
+const PopularProducts = ({products}) => {
     const dispatch = useDispatch();
-    const { id } = useParams();
-    const products = useLoaderData().products;
+    const {id} = useParams();
     const addCart = (product) => {
         dispatch(addToCart(product));
     }
@@ -30,7 +29,7 @@ const PopularProducts = () => {
                 <div className="head-box products-head centered-head" data-aos="fade-down">
                     <p className="best-deal">
                         <span>
-                            <FaStar />
+                            <FaStar/>
                         </span>
                         most sold
                     </p>
@@ -44,25 +43,25 @@ const PopularProducts = () => {
                             <div className="popular-product-item" key={index}>
                                 <div className="product-info-block">
                                     <div className="product-img">
-                                        <img src={product.image} alt={product.name} />
+                                        <img src={product.image} alt={product.name}/>
                                     </div>
                                     <div className="info-item">
                                         <div className="top-info">
                                             <ul className="product-rate">
                                                 <li className="rate-item">
-                                                    <FaStar />
+                                                    <FaStar/>
                                                 </li>
                                                 <li className="rate-item">
-                                                    <FaStar />
+                                                    <FaStar/>
                                                 </li>
                                                 <li className="rate-item">
-                                                    <FaStar />
+                                                    <FaStar/>
                                                 </li>
                                                 <li className="rate-item">
-                                                    <FaStar />
+                                                    <FaStar/>
                                                 </li>
                                                 <li className="rate-item">
-                                                    <FaStar />
+                                                    <FaStar/>
                                                 </li>
                                             </ul>
                                             <div className="review-item">
@@ -88,12 +87,12 @@ const PopularProducts = () => {
                                 <div className="product-action">
                                     <div className="p-action">
                                         <button className="btn action-btn btn-cart"
-                                            onClick={() => addCart(product)}>
-                                            <CiShoppingCart />
+                                                onClick={() => addCart(product)}>
+                                            <CiShoppingCart/>
                                         </button>
                                         <button className="btn action-btn wish-btn"
-                                            onClick={() => addWish(product)}>
-                                            <CiHeart />
+                                                onClick={() => addWish(product)}>
+                                            <CiHeart/>
                                         </button>
                                     </div>
                                 </div>
