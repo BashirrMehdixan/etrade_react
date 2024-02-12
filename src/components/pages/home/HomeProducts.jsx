@@ -1,11 +1,11 @@
-import {Link, useParams} from 'react-router-dom';
-import {useDispatch} from "react-redux";
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {Grid, Navigation} from 'swiper/modules';
+import { Link, useParams } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Grid, Navigation } from 'swiper/modules';
 // Icons
-import {FaStar} from "react-icons/fa6";
-import {FaRegEye, FaRegHeart, FaShoppingBasket} from "react-icons/fa";
-import {IoIosArrowRoundForward, IoIosArrowRoundBack} from "react-icons/io";
+import { FaStar } from "react-icons/fa6";
+import { FaRegEye, FaRegHeart, FaShoppingBasket } from "react-icons/fa";
+import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
 
 // CSS
 import 'swiper/css';
@@ -14,13 +14,13 @@ import 'swiper/css/navigation';
 import "./css/HomeProducts.css"
 
 // Actions
-import {addToCart} from "../../../features/cart";
-import {addToWishlist} from "../../../features/wishlist";
+import { addToCart } from "../../../features/cart";
+import { addToWishlist } from "../../../features/wishlist";
 
-const HomeProducts = ({products}) => {
+const HomeProducts = ({ products }) => {
 
     console.log(products)
-    const {id} = useParams();
+    const { id } = useParams();
     const dispatch = useDispatch();
     const addCart = (product) => {
         dispatch(addToCart(product));
@@ -29,13 +29,14 @@ const HomeProducts = ({products}) => {
         dispatch(addToWishlist(product));
     }
     return (
+        products &&
         <>
             <section className="home-products">
                 <div className="container relative">
                     <div className="head-box products-head" data-aos="fade-down">
                         <p className="best-deal">
                             <span>
-                                <FaShoppingBasket/>
+                                <FaShoppingBasket />
                             </span>
                             Our products
                         </p>
@@ -44,10 +45,10 @@ const HomeProducts = ({products}) => {
                         </p>
                     </div>
                     <div className="swiper-product-btn image-swiper-button-next">
-                        <IoIosArrowRoundForward/>
+                        <IoIosArrowRoundForward />
                     </div>
                     <div className="swiper-product-btn image-swiper-button-prev">
-                        <IoIosArrowRoundBack/>
+                        <IoIosArrowRoundBack />
                     </div>
                     <Swiper
                         slidesPerView={1}
@@ -79,50 +80,50 @@ const HomeProducts = ({products}) => {
                                 <SwiperSlide key={index}>
                                     <div className="product-item hover-product" data-aos="flip-up">
                                         <Link to={`products/${product.id}`} className="product-img">
-                                            <img src={product.image} alt={product.name}/>
+                                            <img src={product.thumbnail} alt={product.title} />
                                         </Link>
-                                        <p className={product.discount === 0 ? "none" : "discount"}>{product.discount}%
+                                        <p className={product.discountPercentage === 0 ? "none" : "discount"}>{product.discountPercentage}%
                                             Off</p>
                                         <div className="product-info">
                                             <ul className="product-rate">
                                                 <li className="rate-item">
-                                                    <FaStar/>
+                                                    <FaStar />
                                                 </li>
                                                 <li className="rate-item">
-                                                    <FaStar/>
+                                                    <FaStar />
                                                 </li>
                                                 <li className="rate-item">
-                                                    <FaStar/>
+                                                    <FaStar />
                                                 </li>
                                                 <li className="rate-item">
-                                                    <FaStar/>
+                                                    <FaStar />
                                                 </li>
                                                 <li className="rate-item">
-                                                    <FaStar/>
+                                                    <FaStar />
                                                 </li>
                                             </ul>
                                             <Link to={`/products/${product.id}`} className="product-name">
-                                                {product.name}
+                                                {product.title}
                                             </Link>
                                             <div className="product-prices">
-                                                <p className={product.salePrice === 0 ? "none" : "price sale-price"}>
-                                                    ${product.salePrice}
+                                                <p className={product.discountPercentage === 0 ? "none" : "price sale-price"}>
+                                                    ${product.price - (product.price * (product.discountPercentage) / 100)}
                                                 </p>
-                                                <p className={product.salePrice === 0 ? "price" : "price product-price"}>
+                                                <p className={product.discountPercentage === 0 ? "price" : "price product-price"}>
                                                     ${product.price}
                                                 </p>
                                             </div>
                                         </div>
                                         <div className="cart-action">
                                             <button className="btn action-btn look-btn">
-                                                <FaRegEye/>
+                                                <FaRegEye />
                                             </button>
                                             <button className="btn cart-btn" onClick={() => addCart(product)}>
                                                 Add to Cart
                                             </button>
                                             <button className="btn action-btn wish-btn"
-                                                    onClick={() => addWish(product)}>
-                                                <FaRegHeart/>
+                                                onClick={() => addWish(product)}>
+                                                <FaRegHeart />
                                             </button>
                                         </div>
                                     </div>

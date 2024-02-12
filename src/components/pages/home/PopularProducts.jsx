@@ -43,7 +43,7 @@ const PopularProducts = ({products}) => {
                             <div className="popular-product-item" key={index}>
                                 <div className="product-info-block">
                                     <div className="product-img">
-                                        <img src={product.image} alt={product.name}/>
+                                        <img src={product.thumbnail} alt={product.title}/>
                                     </div>
                                     <div className="info-item">
                                         <div className="top-info">
@@ -72,13 +72,13 @@ const PopularProducts = ({products}) => {
                                             </div>
                                         </div>
                                         <Link to={`products/${product.id}`} className="product-name">
-                                            {product.name}
+                                            {product.title}
                                         </Link>
                                         <div className="prices">
-                                            <span className={product.salePrice === 0 ? "none" : "price"}>
-                                                ${product.salePrice}
+                                            <span className={product.discountPercentage === 0 ? "none" : "price"}>
+                                                ${product.price - (product.price * (product.discountPercentage) / 100)}
                                             </span>
-                                            <span className={product.salePrice === 0 ? "price" : "price old-price"}>
+                                            <span className={product.discountPercentage === 0 ? "price" : "price old-price"}>
                                                 ${product.price}
                                             </span>
                                         </div>

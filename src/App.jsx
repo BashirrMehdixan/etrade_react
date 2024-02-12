@@ -1,10 +1,10 @@
-import {useEffect, useContext, useState} from 'react';
-import {createBrowserRouter, Route, createRoutesFromElements, RouterProvider, Navigate} from 'react-router-dom';
-import {Toaster} from 'react-hot-toast';
-import {AuthContext} from './context/AuthContext';
+import { useEffect, useContext, useState } from 'react';
+import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider, Navigate } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import { AuthContext } from './context/AuthContext';
 
-import {getDoc, doc} from "firebase/firestore";
-import {db} from './firebase';
+import { getDoc, doc } from "firebase/firestore";
+import { db } from './firebase';
 import AOS from 'aos';
 
 // CSS
@@ -32,7 +32,7 @@ import AccountDetail from "./components/pages/profile/AccountDetail";
 import NotFound from "./components/pages/NotFound";
 
 // Loaders
-import {SmartphonesData} from './data/databases';
+import { SmartphonesData } from './data/databases';
 import About from "./components/pages/about/About";
 import Noutbooks from "./components/pages/products/Noutbooks";
 
@@ -75,7 +75,7 @@ function App() {
     }, []);
 
 
-    const {currentUser} = useContext(AuthContext);
+    const { currentUser } = useContext(AuthContext);
     const [data, setData] = useState([])
 
     useEffect(() => {
@@ -90,42 +90,42 @@ function App() {
             }
             fetchData();
         }
-    }, []);
-    const RequireAuth = ({children}) => {
-        return currentUser ? children : <Navigate to="/login"/>
+    }, [currentUser]);
+    const RequireAuth = ({ children }) => {
+        return currentUser ? children : <Navigate to="/login" />
     }
     const router = createBrowserRouter(
         createRoutesFromElements(
-            <Route path="/" element={<RootLayout/>}>
-                <Route index element={<Home products={products}/>}/>
+            <Route path="/" element={<RootLayout />}>
+                {products && <Route index element={<Home products={products} />} />}
                 <Route path="/profile" element={
                     <RequireAuth>
-                        <ProfileLayout accountData={data}/>
+                        <ProfileLayout accountData={data} />
                     </RequireAuth>
                 }>
-                    <Route index element={<Dashboard/>}/>
-                    <Route path="orders" element={<Orders/>}/>
-                    <Route path="downloads" element={<Downloads/>}/>
-                    <Route path="addresses" element={<Addresses/>}/>
-                    <Route path="account-details" element={<AccountDetail accountData={data}/>}/>
+                    <Route index element={<Dashboard />} />
+                    <Route path="orders" element={<Orders />} />
+                    <Route path="downloads" element={<Downloads />} />
+                    <Route path="addresses" element={<Addresses />} />
+                    <Route path="account-details" element={<AccountDetail accountData={data} />} />
                 </Route>
-                <Route path="/products" element={<ProductsLayout/>}>
-                    <Route index element={<Smartphones products={products}/>}/>
-                    <Route path=":id" element={<ProductDetail/>}/>
-                    <Route path={"notebooks"} element={<Noutbooks/>}/>
+                <Route path="/products" element={<ProductsLayout />}>
+                    <Route index element={<Smartphones products={products} />} />
+                    <Route path=":id" element={<ProductDetail products={products} />} />
+                    <Route path={"notebooks"} element={<Noutbooks />} />
                 </Route>
-                <Route path={"/about-us"} element={<About/>}/>
-                <Route path="login" element={<Login/>}/>
-                <Route path="signup" element={<Register/>}/>
-                <Route path="/wishlist" element={<Wishlist/>}/>
-                <Route path="/cart" element={<Cart/>}/>
-                <Route path="*" element={<NotFound/>}/>
+                <Route path={"/about-us"} element={<About />} />
+                <Route path="login" element={<Login />} />
+                <Route path="signup" element={<Register />} />
+                <Route path="/wishlist" element={<Wishlist />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="*" element={<NotFound />} />
             </Route>
         )
     )
     return (
         <>
-            <RouterProvider router={router}/>
+            <RouterProvider router={router} />
             <Toaster
                 position="top-right"
                 reverseOrder={false}
