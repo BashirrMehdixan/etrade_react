@@ -18,8 +18,6 @@ import { addToCart } from "../../../features/cart";
 import { addToWishlist } from "../../../features/wishlist";
 
 const HomeProducts = ({ products }) => {
-
-    console.log(products)
     const { id } = useParams();
     const dispatch = useDispatch();
     const addCart = (product) => {

@@ -17,7 +17,6 @@ import { addToCart } from "../../../features/cart";
 import "./css/Products.css";
 
 const Smartphones = ({ products }) => {
-    console.log(products)
     const { id } = useParams();
     const [openCategories, setOpenCategories] = useState({});
     const dispatch = useDispatch();
