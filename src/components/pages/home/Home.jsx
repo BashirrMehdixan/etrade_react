@@ -7,8 +7,10 @@ import NewArrivals from "./NewArrivals";
 import PopularProducts from "./PopularProducts";
 import HomeServices from "./HomeServices";
 import {Helmet} from "react-helmet";
+import {SmartphonesData} from "../../../data/databases";
 
-const Home = () => {
+const Home = ({products}) => {
+
     return (
         <>
             <Helmet>
@@ -17,10 +19,10 @@ const Home = () => {
             <HomeSlide/>
             <HomeCategories/>
             <Sales/>
-            <HomeProducts/>
+            <HomeProducts poducts={products}/>
             <Feedbacks/>
-            <NewArrivals/>
-            <PopularProducts/>
+            <NewArrivals products={products}/>
+            <PopularProducts products={products}/>
             <HomeServices/>
         </>
     )

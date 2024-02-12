@@ -32,7 +32,7 @@ import AccountDetail from "./components/pages/profile/AccountDetail";
 import NotFound from "./components/pages/NotFound";
 
 // Loaders
-import {SmartphonesData, smartphoneDetail} from './data/databases';
+import {SmartphonesData} from './data/databases';
 import About from "./components/pages/about/About";
 import Noutbooks from "./components/pages/products/Noutbooks";
 
@@ -58,8 +58,26 @@ function App() {
     document.addEventListener('scroll', () => {
         AOS.refreshHard();
     });
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const data = await SmartphonesData();
+                setProducts(data.products)
+            } catch (error) {
+                console.error('Error fetching products:', error);
+            }
+        };
+
+        fetchProducts();
+    }, []);
+
+
     const {currentUser} = useContext(AuthContext);
     const [data, setData] = useState([])
+
     useEffect(() => {
         if (currentUser) {
             const fetchData = async () => {
@@ -79,7 +97,7 @@ function App() {
     const router = createBrowserRouter(
         createRoutesFromElements(
             <Route path="/" element={<RootLayout/>}>
-                <Route index loader={SmartphonesData} element={<Home/>}/>
+                <Route index element={<Home products={products}/>}/>
                 <Route path="/profile" element={
                     <RequireAuth>
                         <ProfileLayout accountData={data}/>
@@ -92,9 +110,9 @@ function App() {
                     <Route path="account-details" element={<AccountDetail accountData={data}/>}/>
                 </Route>
                 <Route path="/products" element={<ProductsLayout/>}>
-                    <Route index loader={SmartphonesData} element={<Smartphones/>}/>
-                    <Route path=":id" loader={smartphoneDetail} element={<ProductDetail/>}/>
-                    <Route path={"notebooks"} loader={SmartphonesData} element={<Noutbooks/>}/>
+                    <Route index element={<Smartphones products={products}/>}/>
+                    <Route path=":id" element={<ProductDetail/>}/>
+                    <Route path={"notebooks"} element={<Noutbooks/>}/>
                 </Route>
                 <Route path={"/about-us"} element={<About/>}/>
                 <Route path="login" element={<Login/>}/>

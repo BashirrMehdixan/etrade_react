@@ -1,12 +1,11 @@
-import { Link, useParams, useLoaderData } from 'react-router-dom';
-import { useDispatch } from "react-redux";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Grid, Navigation } from 'swiper/modules';
-import toast from "react-hot-toast";
+import {Link, useParams} from 'react-router-dom';
+import {useDispatch} from "react-redux";
+import {Swiper, SwiperSlide} from 'swiper/react';
+import {Grid, Navigation} from 'swiper/modules';
 // Icons
-import { FaStar } from "react-icons/fa6";
-import { FaRegEye, FaRegHeart, FaShoppingBasket } from "react-icons/fa";
-import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
+import {FaStar} from "react-icons/fa6";
+import {FaRegEye, FaRegHeart, FaShoppingBasket} from "react-icons/fa";
+import {IoIosArrowRoundForward, IoIosArrowRoundBack} from "react-icons/io";
 
 // CSS
 import 'swiper/css';
@@ -15,12 +14,13 @@ import 'swiper/css/navigation';
 import "./css/HomeProducts.css"
 
 // Actions
-import { addToCart } from "../../../features/cart";
-import { addToWishlist } from "../../../features/wishlist";
+import {addToCart} from "../../../features/cart";
+import {addToWishlist} from "../../../features/wishlist";
 
-const HomeProducts = () => {
-    const { id } = useParams();
-    let products = useLoaderData().products;
+const HomeProducts = ({products}) => {
+
+    console.log(products)
+    const {id} = useParams();
     const dispatch = useDispatch();
     const addCart = (product) => {
         dispatch(addToCart(product));
@@ -35,7 +35,7 @@ const HomeProducts = () => {
                     <div className="head-box products-head" data-aos="fade-down">
                         <p className="best-deal">
                             <span>
-                                <FaShoppingBasket />
+                                <FaShoppingBasket/>
                             </span>
                             Our products
                         </p>
@@ -44,10 +44,10 @@ const HomeProducts = () => {
                         </p>
                     </div>
                     <div className="swiper-product-btn image-swiper-button-next">
-                        <IoIosArrowRoundForward />
+                        <IoIosArrowRoundForward/>
                     </div>
                     <div className="swiper-product-btn image-swiper-button-prev">
-                        <IoIosArrowRoundBack />
+                        <IoIosArrowRoundBack/>
                     </div>
                     <Swiper
                         slidesPerView={1}
@@ -79,26 +79,26 @@ const HomeProducts = () => {
                                 <SwiperSlide key={index}>
                                     <div className="product-item hover-product" data-aos="flip-up">
                                         <Link to={`products/${product.id}`} className="product-img">
-                                            <img src={product.image} alt={product.name} />
+                                            <img src={product.image} alt={product.name}/>
                                         </Link>
                                         <p className={product.discount === 0 ? "none" : "discount"}>{product.discount}%
                                             Off</p>
                                         <div className="product-info">
                                             <ul className="product-rate">
                                                 <li className="rate-item">
-                                                    <FaStar />
+                                                    <FaStar/>
                                                 </li>
                                                 <li className="rate-item">
-                                                    <FaStar />
+                                                    <FaStar/>
                                                 </li>
                                                 <li className="rate-item">
-                                                    <FaStar />
+                                                    <FaStar/>
                                                 </li>
                                                 <li className="rate-item">
-                                                    <FaStar />
+                                                    <FaStar/>
                                                 </li>
                                                 <li className="rate-item">
-                                                    <FaStar />
+                                                    <FaStar/>
                                                 </li>
                                             </ul>
                                             <Link to={`/products/${product.id}`} className="product-name">
@@ -115,13 +115,14 @@ const HomeProducts = () => {
                                         </div>
                                         <div className="cart-action">
                                             <button className="btn action-btn look-btn">
-                                                <FaRegEye />
+                                                <FaRegEye/>
                                             </button>
                                             <button className="btn cart-btn" onClick={() => addCart(product)}>
                                                 Add to Cart
                                             </button>
-                                            <button className="btn action-btn wish-btn" onClick={() => addWish(product)}>
-                                                <FaRegHeart />
+                                            <button className="btn action-btn wish-btn"
+                                                    onClick={() => addWish(product)}>
+                                                <FaRegHeart/>
                                             </button>
                                         </div>
                                     </div>

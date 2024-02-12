@@ -17,7 +17,7 @@ import "./css/Arrivals.css";
 import {addToCart} from "../../../features/cart";
 import {addToWishlist} from "../../../features/wishlist";
 
-const NewArrivals = () => {
+const NewArrivals = ({products}) => {
     const {id} = useParams();
     const dispatch = useDispatch();
     const addCart = (product) => {
@@ -26,7 +26,6 @@ const NewArrivals = () => {
     const addWish = (product) => {
         dispatch(addToWishlist(product));
     }
-    const products = useLoaderData().products;
     return (
         <section className="home-arrival">
             <div className="container relative">
