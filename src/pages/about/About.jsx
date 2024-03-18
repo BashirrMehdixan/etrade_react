@@ -1,7 +1,8 @@
-import Breadcrumb from "layouts/Breadcrumb.jsx";
 import { Helmet } from "react-helmet";
+import Breadcrumb from "layouts/Breadcrumb.jsx";
 import AboutCompany from "./AboutCompany.jsx";
 import OurTeam from "./OurTeam.jsx";
+import AboutFeatures from "./AboutFeatures.jsx";
 
 const About = () => {
     return (
@@ -12,6 +13,7 @@ const About = () => {
             <Breadcrumb />
             <AboutCompany />
             <OurTeam />
+            <AboutFeatures />
         </>
     )
 }

@@ -1,7 +1,5 @@
 import { FaShoppingBasket } from "react-icons/fa"
 
-import "./css/AboutCompany.css"
-
 const AboutCompany = () => {
     return (
         <>

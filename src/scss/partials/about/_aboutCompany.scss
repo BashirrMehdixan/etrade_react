@@ -5,30 +5,22 @@
     gap: 36px;
     padding: 50px 0;
 
-    .left-side {
-        width: 30%;
-    }
+    .inner {
+        color: #777777;
 
-    .right-side {
-        width: 60%;
-        padding: 0 15px;
+        p.inner-content {
+            font-size: 18px;
+            font-weight: 500;
+        }
 
-        .inner {
-            color: #777777;
+        .inner-block {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px 0;
 
-            p.inner-content {
-                font-size: 18px;
-                font-weight: 500;
-            }
-
-            .inner-block {
-                display: flex;
-                justify-content: space-between;
-                padding: 20px 0;
-
-                p {
-                    width: 45%;
-                }
+            p {
+                width: 45%;
             }
         }
     }
@@ -58,6 +50,20 @@
             .block-head {
                 font-size: 18px;
                 padding: 20px 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .about-box {
+        .inner {
+            .inner-block {
+
+                p {
+                    width: 100%;
+                    margin: 15px 0;
+                }
             }
         }
     }

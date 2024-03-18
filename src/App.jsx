@@ -9,7 +9,7 @@ import { db } from 'store/firebase.js';
 import AOS from 'aos';
 
 // CSS
-import './App.css';
+import './scss/App.css';
 import 'aos/dist/aos.css';
 
 // Layouts
