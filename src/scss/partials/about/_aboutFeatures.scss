@@ -1,5 +1,12 @@
 .left-side {
     width: calc(35% - 32px);
+
+    .features-img {
+        img {
+            width: 100%;
+            border-radius: 16px;
+        }
+    }
 }
 
 .right-side {
@@ -20,16 +27,6 @@
         &:nth-child(even) {
             flex-direction: row-reverse;
         }
-
-        .features-img {
-            img {
-                width: 100%;
-                border-radius: 16px;
-            }
-        }
-
-
-
 
         .mid-title {
             font-weight: 500;
@@ -68,5 +65,6 @@
     .left-side,
     .right-side {
         width: 100%;
+        padding: 0;
     }
 }

@@ -7,7 +7,9 @@ const AboutCompany = () => {
                 <div className="container">
                     <div className="about-box">
                         <div className="left-side">
-                            <img src={'assets/images/about/about-01.png'} alt="" />
+                            <div className="features-img">
+                                <img src={'assets/images/about/about-01.png'} alt="" />
+                            </div>
                         </div>
                         <div className="right-side">
                             <div className="head-box blue-head">
