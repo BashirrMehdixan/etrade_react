@@ -5,8 +5,6 @@ import { Helmet } from "react-helmet";
 import { removeFromCart, increment, decrement } from "features/cart";
 import { IoCloseOutline } from "react-icons/io5";
 
-import "./css/Wishlist.css"
-
 const Cart = () => {
     const dispatch = useDispatch();
     const cartItems = useSelector((state) => state.cart.items);
@@ -53,7 +51,7 @@ const Cart = () => {
                                             <td className="product-name">
                                                 <Link to={`/products/${item.id}`}>{item.name}</Link>
                                             </td>
-                                            <td className="price">${item.price}</td>
+                                            <td className="price">${item.price.toFixed(2)}</td>
                                             <td className="product-quantity">
                                                 <button className="btn btn-dec" onClick={() => dispatch(decrement({ id: item.id }))}>
                                                     -
@@ -64,7 +62,7 @@ const Cart = () => {
                                                 </button>
                                             </td>
                                             <td className="total-price">
-                                                ${item.total}
+                                                ${item.total.toFixed(2)}
                                             </td>
                                         </tr>
                                     ))}

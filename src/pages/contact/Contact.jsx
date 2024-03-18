@@ -5,9 +5,16 @@ const Contact = () => {
     return (
         <>
             <Helmet>
-                <title>Contact</title>
+                <title>eTrade | Contact With Us</title>
             </Helmet>
             <Breadcrumb />
+            <div className="container">
+                <div className="contact-box">
+                    <h4 className="main-head">
+                        We would love to hear from you.
+                    </h4>
+                </div>
+            </div>
         </>
     )
 }
