@@ -19,10 +19,13 @@ import ProductsLayout from "layouts/ProductsLayout";
 
 // Pages
 import Home from 'pages/home/Home';
+// Products
 import Products from 'pages/products/Products';
 import ProductDetail from "pages/products/ProductDetail";
-import Wishlist from "pages/profile/Wishlist";
-import Cart from 'pages/profile/Cart';
+// wishlist and Cart
+import Wishlist from "pages/wishlist/Wishlist";
+import Cart from 'pages/cart/Cart';
+// Profile page
 import Register from 'pages/profile/Register';
 import Login from 'pages/profile/Login';
 import Dashboard from "pages/profile/Dashboard";
@@ -30,9 +33,14 @@ import Orders from 'pages/profile/Orders';
 import Downloads from 'pages/profile/Downloads';
 import Addresses from "pages/profile/Addresses";
 import AccountDetail from "pages/profile/AccountDetail";
+// About
 import About from "pages/about/About";
-import NotFound from "pages/NotFound";
+// Contact
 import Contact from "pages/contact/Contact";
+// NotFound
+import NotFound from "pages/NotFound";
+// Blog
+import Blog from "pages/blog/Blog";
 
 function App() {
     AOS.init({
@@ -150,6 +158,7 @@ function App() {
                     <Route path="/wishlist" element={<Wishlist />} />
                     <Route path="/cart" element={<Cart />} />
                     <Route path={"/contact"} element={<Contact />} />
+                    <Route path="/blog" element={<Blog />} />
                     <Route path="*" element={<NotFound />} />
                 </Route>
                 <Route path="login" element={<Login />} />

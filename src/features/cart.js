@@ -30,7 +30,7 @@ const cart = createSlice({
             }
             state.count += 1;
             state.total += action.payload.salePrice;
-            toast.success(`${existingItem.title} added to cart!`);
+            toast.success(`${action.payload.title} added to cart!`);
         },
         removeFromCart(state, action) {
             const itemIdToRemove = action.payload;

@@ -1,0 +1,182 @@
+.wishlist-page {
+    padding: 30px;
+
+    .wishlist-table {
+        border-collapse: collapse;
+        width: 100%;
+
+        thead {
+            background-color: #F6F7FB;
+        }
+
+        tr,
+        td,
+        th {
+            border-collapse: collapse;
+        }
+
+        tr {
+            position: relative;
+
+            th,
+            td {
+                font-size: 20px;
+                font-weight: 500;
+                padding: 20px;
+                text-align: center;
+            }
+        }
+
+        .product-img {
+            width: 80px;
+
+            a,
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        .btn-rmv {
+            width: 40px;
+            height: 40px;
+            justify-content: center;
+            background-color: #F6F7FB;
+            border-radius: 50%;
+            border: 2px solid transparent;
+
+            &:hover {
+                border-color: #3577f0;
+            }
+        }
+
+        .product-name,
+        .product-name a {
+            color: #282930;
+            font-weight: 500;
+            transition: .5s;
+
+            &:hover {
+                color: #3577f0;
+            }
+        }
+
+        td {
+            color: #777777;
+
+            &.add-cart {
+                .btn-cart {
+                    border: 2px solid #efefef;
+                    font-size: 16px;
+                    font-weight: 500;
+                    padding: 10px 15px;
+
+                    &:hover {
+                        color: #fff;
+                        border-color: transparent;
+                        background-color: #3577f0;
+                    }
+                }
+            }
+        }
+
+        .product-quantity {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .btn {
+                width: 40px;
+                height: 40px;
+                border-radius: 100px;
+            }
+
+            .count {
+                padding: 20px;
+            }
+        }
+    }
+}
+
+.border-bottom {
+    border-bottom: 2px solid #F6F7FB;
+}
+
+.head-box.flex-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media only screen and (max-width: 991px) {
+    .wishlist-page {
+        .head-box.flex-head {
+            justify-content: center;
+            text-align: center;
+        }
+
+        .wishlist-table {
+            thead {
+                display: none;
+            }
+
+            tbody tr {
+                display: block;
+                padding-left: 70px;
+
+                td {
+                    display: block;
+                    position: relative;
+                    text-align: right;
+                    border-bottom: 1px solid #F6F7FB;
+                    padding: 15px 10px 15px 0;
+                    font-size: 16px;
+
+                    &.product-name {
+                        width: 100%;
+                        text-align: left;
+                    }
+
+                    &.product-quantity {
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        padding: 0;
+                    }
+
+                    &.product-remove {
+                        position: absolute;
+                        top: -5px;
+                        right: -20%;
+                        border-bottom: 0;
+                    }
+
+                    &.product-img {
+                        position: absolute;
+                        width: 120px;
+                        top: -16px;
+                        left: -50px;
+                        border-bottom: 0;
+                        z-index: 1;
+
+                        a,
+                        a img {
+                            width: inherit;
+                        }
+                    }
+
+                    &.add-cart {
+                        border-bottom: none;
+                    }
+                }
+
+                .btn-rmv,
+                .btn {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}

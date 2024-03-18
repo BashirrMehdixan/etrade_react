@@ -9,9 +9,6 @@ import { addToCart } from "features/cart";
 // Icons
 import { IoCloseOutline } from "react-icons/io5";
 
-// CSS
-import "./css/Wishlist.css"
-
 const Wishlist = () => {
     const dispatch = useDispatch();
     const wishlistItems = useSelector((state) => state.wishlist.items);
@@ -60,7 +57,7 @@ const Wishlist = () => {
                                             <td className="product-name">
                                                 <Link to={`/products/${item.id}`}>{item.title}</Link>
                                             </td>
-                                            <td className="price">${item.price}</td>
+                                            <td className="price">${item.price.toFixed(2)}</td>
                                             <td className="stock-status">In stock</td>
                                             <td className="add-cart">
                                                 <button className="btn btn-cart" onClick={() => addCart(item)}>
