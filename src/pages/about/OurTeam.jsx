@@ -15,7 +15,6 @@ import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/navigation';
-import "./css/OurTeam.css";
 
 const OurTeam = () => {
     const { users } = useContext(UsersContext);

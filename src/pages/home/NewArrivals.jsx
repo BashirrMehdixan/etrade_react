@@ -11,7 +11,6 @@ import { FaShoppingBasket } from "react-icons/fa";
 // Css
 import 'swiper/css';
 import 'swiper/css/navigation';
-import "./css/Arrivals.css";
 
 // Actions
 import { addToCart } from "features/cart.js";

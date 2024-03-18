@@ -44,7 +44,6 @@ const PopularProducts = () => {
                 <div className="popular-products-block">
                     {products.map((product, index) => {
                         return (
-                            // eslint-disable-next-line react/jsx-key
                             <PopularCard key={index} product={product} addWish={addWish} addCart={addCart} />
                         )
                     })}
