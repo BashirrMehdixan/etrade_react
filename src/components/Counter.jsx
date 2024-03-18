@@ -1,5 +1,5 @@
-import {useSelector, useDispatch} from 'react-redux';
-import {decrement, increment} from "../features/counter";
+import { useSelector, useDispatch } from 'react-redux';
+import { decrement, increment } from "../features/counter";
 
 export const Counter = () => {
     const count = useSelector((state) => state.counter.value);
@@ -10,7 +10,7 @@ export const Counter = () => {
                 <button className="btn btn-dec" onClick={() => dispatch(decrement())}>-</button>
             </li>
             <li>
-                <input type="text" className="quantity" value={count}/>
+                <input type="text" className="quantity" value={count} />
             </li>
             <li>
                 <button className="btn btn-inc" onClick={() => dispatch(increment())}>+</button>

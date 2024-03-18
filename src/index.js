@@ -3,13 +3,18 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import store from "./store/store";
 import { Provider } from 'react-redux';
-import { AuthContextProvider } from './context/AuthContext';
+import ProductProvider from "./context/Products/ProductContext";
+import { AuthContextProvider } from './context/Auth/AuthContext';
+import UsersProvider from "./context/Users/UsersContext";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
     <Provider store={store}>
-        <AuthContextProvider>
-            <App />
-        </AuthContextProvider>
+        <UsersProvider>
+            <ProductProvider>
+                <AuthContextProvider>
+                    <App />
+                </AuthContextProvider>
+            </ProductProvider>
+        </UsersProvider>
     </Provider>
 )

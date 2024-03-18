@@ -1,4 +1,4 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
 
 const initialState = {
@@ -11,7 +11,7 @@ const wishlist = createSlice({
     reducers: {
         addToWishlist(state, action) {
             state.count += 1;
-            const tempProduct = {...action.payload};
+            const tempProduct = { ...action.payload };
             state.items.push(tempProduct);
             toast.success(`${action.payload.title} added to wishlist`)
         },
@@ -32,6 +32,6 @@ const wishlist = createSlice({
     }
 })
 
-export const {addToWishlist, removeFromWishlist} = wishlist.actions;
+export const { addToWishlist, removeFromWishlist } = wishlist.actions;
 
 export default wishlist.reducer;

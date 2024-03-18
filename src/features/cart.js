@@ -1,4 +1,4 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
 
 const initialState = {
@@ -15,7 +15,6 @@ const cart = createSlice({
             const existingItemSalePrice = action.payload.price - (action.payload.price * (action.payload.discountPercentage) / 100);
             if (existingItem) {
                 existingItem.quantity += 1;
-                toast.success(`${existingItem.title} added to cart!`);
                 if (!existingItem.discountPercentage) {
                     existingItem.total += existingItemSalePrice;
                 } else {
@@ -31,6 +30,7 @@ const cart = createSlice({
             }
             state.count += 1;
             state.total += action.payload.salePrice;
+            toast.success(`${existingItem.title} added to cart!`);
         },
         removeFromCart(state, action) {
             const itemIdToRemove = action.payload;
@@ -47,7 +47,7 @@ const cart = createSlice({
             }
         },
         increment: (state, action) => {
-            const {id} = action.payload;
+            const { id } = action.payload;
             const existingItem = state.items.find((item) => item.id === id);
             const existingItemSalePrice = existingItem.price - (existingItem.price * (existingItem.discountPercentage) / 100);
             if (existingItem) {
@@ -61,7 +61,7 @@ const cart = createSlice({
             }
         },
         decrement: (state, action) => {
-            const {id} = action.payload;
+            const { id } = action.payload;
             const existingItem = state.items.find((item) => item.id === id);
             const existingItemSalePrice = existingItem.price - (existingItem.price * (existingItem.discountPercentage) / 100);
             if (existingItem && existingItem.quantity > 1) {
@@ -77,6 +77,6 @@ const cart = createSlice({
     }
 })
 
-export const {addToCart, removeFromCart, increment, decrement} = cart.actions;
+export const { addToCart, removeFromCart, increment, decrement } = cart.actions;
 
 export default cart.reducer;

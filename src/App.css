@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -8,7 +9,7 @@
     box-sizing: border-box;
     padding-inline: 0;
     padding-block: 0;
-    font-family: "DM Sans", sans-serif;
+    font-family: "Exo"
 
 }
 
@@ -342,10 +343,6 @@ button.btn-inc,
     background-color: #ff497c;
     border-radius: 50%;
     margin: 0 5px;
-}
-
-.head-box.products-head .best-deal {
-    color: #8c71db;
 }
 
 .head-box.products-head span {

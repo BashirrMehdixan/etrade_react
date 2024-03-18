@@ -1,0 +1,32 @@
+.our-team-section {
+    padding: 80px 0;
+    position: relative;
+
+    .swiper-team-btn {
+        top: 20% !important;
+    }
+
+    .member-block {
+        padding: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+
+        img {
+            transition: .5s;
+        }
+
+        &:hover {
+            img {
+                scale: 1.1;
+            }
+        }
+
+        .member-info {
+            .member-position {
+                font-size: 15px;
+                color: #777777;
+                padding: 15px 0;
+            }
+        }
+    }
+}

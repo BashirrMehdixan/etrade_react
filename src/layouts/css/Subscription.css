@@ -1,0 +1,64 @@
+.subscrubtion-section {
+    padding-top: 20px;
+}
+
+.subscrubtion-section .head-box .best-deal {
+    color: #3577f0;
+}
+
+.subscrubtion-section .head-box .best-deal span {
+    background-color: #3577f0;
+}
+
+.subscrubtion-block {
+    background-image: url(../../../public/assets/images/backgrounds/bg-image-5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 100px 107px 85px;
+    border-radius: 10px;
+}
+
+.subscrubtion-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.subscrubtion-form .form-group .form-item {
+    padding: 20px 0 20px 60px;
+}
+
+.preferences-block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 90px 0 50px 0;
+    gap: 16px;
+}
+
+.preferences-block .preference-item .prf-img img {
+    width: 45px;
+    max-height: 60px;
+}
+
+.preferences-block .preference-item .prf-info {
+    margin: 0 10px;
+}
+
+.preferences-block .preference-item .prf-info .prf-title {
+    color: #292930;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.preferences-block .preference-item .prf-info .prf-text {
+    font-weight: 400;
+    font-size: 15px;
+}
+
+@media only screen and (max-width: 767px) {
+    .subscrubtion-block {
+        padding: 20px 0;
+    }
+}
