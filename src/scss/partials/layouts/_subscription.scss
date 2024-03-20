@@ -1,17 +1,17 @@
-.subscrubtion-section {
+.subscription-section {
     padding-top: 20px;
 }
 
-.subscrubtion-section .head-box .best-deal {
+.subscription-block .head-box .best-deal {
     color: #3577f0;
 }
 
-.subscrubtion-section .head-box .best-deal span {
+.subscription-section .head-box .best-deal span {
     background-color: #3577f0;
 }
 
-.subscrubtion-block {
-    background-image: url(../../../public/assets/images/backgrounds/bg-image-5.jpg);
+.subscription-block {
+    background-image: url(../../../../public/assets/images/backgrounds/bg-image-5.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -19,12 +19,12 @@
     border-radius: 10px;
 }
 
-.subscrubtion-form {
+.subscription-form {
     display: flex;
     flex-wrap: wrap;
 }
 
-.subscrubtion-form .form-group .form-item {
+.subscription-form .form-group .form-item {
     padding: 20px 0 20px 60px;
 }
 
@@ -58,7 +58,7 @@
 }
 
 @media only screen and (max-width: 767px) {
-    .subscrubtion-block {
+    .subscription-block {
         padding: 20px 0;
     }
 }
