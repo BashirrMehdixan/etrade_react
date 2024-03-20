@@ -1,3 +1,6 @@
+// Layouts
+@import url(./partials/layouts/_subscription.scss);
+
 // Home
 @import url(./partials/home/_arrivals.scss);
 
@@ -29,7 +32,8 @@
     box-sizing: border-box;
     padding-inline: 0;
     padding-block: 0;
-    font-family: "Exo";
+    font-family: "Exo", sans-serif;
+    color: #282828;
 }
 
 html,
@@ -90,7 +94,7 @@ p {
 }
 
 .btn:disabled {
-    opacity: 0.5s;
+    opacity: .5;
 }
 
 .btn-black {
@@ -360,19 +364,32 @@ button.btn-inc,
     margin: 0 5px;
 }
 
-.head-box.products-head span {
-    background-color: #8c71db;
-}
+.head-box {
+    margin: 50px 0 15px 0;
 
-.head-box.centered-head {
-    text-align: center;
-}
+    &.products-head {
+        span {
+            background-color: #8c71db;
+        }
+    }
 
-.head-box.centered-head .best-deal {
-    justify-content: center;
+    &.centered-head {
+        text-align: center;
+    }
+
+    &.centered-head {
+        .best-deal {
+            justify-content: center;
+        }
+    }
+
+    svg {
+        fill: #fff;
+    }
 }
 
 /* Heading ends */
+
 /* Product item start */
 .product-item {
     position: relative;
@@ -685,6 +702,7 @@ button.btn-inc,
     }
 
     .head-box {
+        color: #fff;
         padding: 0 10px;
     }
 
@@ -724,7 +742,7 @@ button.btn-inc,
         width: 100%;
     }
 
-    .subscrubtion-form .btn-black {
+    .subscription-form .btn-black {
         margin: 10px 0;
     }
 

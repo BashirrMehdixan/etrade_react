@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4288bc5f-b3ec-43ab-bb30-34c4353cc9fb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/etrade_react.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/App.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/partials/layouts/_subscription.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/Subscription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Subscription.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/css/Offers.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/css/Offers.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/css/Subscription.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/contact/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/contact/Contact.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/css/HomeProducts.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/css/HomeProducts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/partials/contact/_contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/partials/contact/_contact.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="4288bc5f-b3ec-43ab-bb30-34c4353cc9fb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,6 +26,10 @@
     "assignee": "BashirrMehdixan"
   }
 }]]></component>
+  <component name="GitHubPullRequestState"><![CDATA[{
+  "prStates": []
+}]]></component>
+  <component name="GitLabMergeRequestsSettings"><![CDATA[{}]]></component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
     <option name="recentBranches">
@@ -93,7 +78,6 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "contact",
     "last_opened_file_path": "C:/Users/bashi/OneDrive/Desktop/Github/etrade_react",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
@@ -130,7 +114,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710946312648</updated>
-      <workItem from="1710946314167" duration="1340000" />
+      <workItem from="1710946314167" duration="1805000" />
     </task>
     <servers />
   </component>
