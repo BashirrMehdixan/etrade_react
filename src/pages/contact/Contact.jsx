@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import {Helmet} from "react-helmet";
 import Breadcrumb from "../../layouts/Breadcrumb";
 
 const Contact = () => {
@@ -7,7 +7,7 @@ const Contact = () => {
             <Helmet>
                 <title>eTrade | Contact With Us</title>
             </Helmet>
-            <Breadcrumb />
+            <Breadcrumb/>
             <div className="container">
                 <div className="contact-box">
                     <h4 className="main-head">
