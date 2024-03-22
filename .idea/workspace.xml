@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4288bc5f-b3ec-43ab-bb30-34c4353cc9fb" name="Changes" comment="" />
+    <list default="true" id="4288bc5f-b3ec-43ab-bb30-34c4353cc9fb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/scss/partials/products/_productDetail.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/contact/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/contact/Contact.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/products/ProductDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/products/ProductDetail.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/products/css/ProductDetail.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/App.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/App.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/partials/contact/_contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/partials/contact/_contact.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,17 +30,40 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "BashirrMehdixan"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;BashirrMehdixan&quot;
   }
-}]]></component>
-  <component name="GitHubPullRequestState"><![CDATA[{
-  "prStates": []
-}]]></component>
-  <component name="GitLabMergeRequestsSettings"><![CDATA[{}]]></component>
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: []
+}</component>
+  <component name="GitLabMergeRequestsSettings">{}</component>
   <component name="GitToolBoxStore">
+    <option name="branchesCleanupHistory">
+      <BranchesCleanupHistory>
+        <option name="history">
+          <list>
+            <BranchCleanupEntry>
+              <option name="deletions">
+                <list>
+                  <BranchDeletion>
+                    <option name="hash" value="23820028573e913ad2b2ed5bd7d3f705a7bb52f6" />
+                    <option name="name" value="about" />
+                  </BranchDeletion>
+                  <BranchDeletion>
+                    <option name="hash" value="852e18c0aaa630be2906ec356449f35749fc0ff5" />
+                    <option name="name" value="blog" />
+                  </BranchDeletion>
+                </list>
+              </option>
+              <option name="timestamp" value="1711102932645" />
+            </BranchCleanupEntry>
+          </list>
+        </option>
+      </BranchesCleanupHistory>
+    </option>
     <option name="projectConfigVersion" value="5" />
     <option name="recentBranches">
       <RecentBranches>
@@ -56,15 +89,18 @@
       </RecentBranches>
     </option>
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/BashirrMehdixan/etrade_react.git",
-    "accountId": "5beb1ae5-0d55-4ede-9072-88985a25183c"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/BashirrMehdixan/etrade_react.git&quot;,
+    &quot;accountId&quot;: &quot;5beb1ae5-0d55-4ede-9072-88985a25183c&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2dxOYlBXmdJZ4EoWykY6ohn9Fwx" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -78,6 +114,8 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "contact",
+    "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/bashi/OneDrive/Desktop/Github/etrade_react",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
@@ -85,6 +123,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
+    "settings.editor.selected.configurable": "preferences.updates",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 241.14024.30\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   },
@@ -114,7 +153,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710946312648</updated>
-      <workItem from="1710946314167" duration="1805000" />
+      <workItem from="1710946314167" duration="1917000" />
+      <workItem from="1710948265392" duration="336000" />
+      <workItem from="1711101119876" duration="5270000" />
     </task>
     <servers />
   </component>

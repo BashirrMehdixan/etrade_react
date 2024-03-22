@@ -12,6 +12,9 @@
 @import url(./partials/about/_ourTeam.scss);
 @import url(./partials/about/_aboutFeatures.scss);
 
+// Products
+@import "./partials/products/productDetail.scss";
+
 // Blog
 @import url(./partials/blog/_blog.scss);
 
@@ -33,7 +36,6 @@
     padding-inline: 0;
     padding-block: 0;
     font-family: "Exo", sans-serif;
-    color: #282828;
 }
 
 html,
@@ -513,41 +515,48 @@ button.btn-inc,
 }
 
 /* Product item end */
+
 /* Form elements start */
 .form-group {
     position: relative;
     margin: 25px 0;
-}
 
-.form-group .absolute-item {
-    position: absolute;
-    font-size: 14px;
-    font-weight: 500;
-    background-color: white;
-    padding: 3px 10px;
-    top: -12px;
-    left: 15px;
-    z-index: 1;
-}
+    input {
+        display: block;
+        border: 1px solid #CBD3D9;
+        border-radius: 8px;
+        transition: .5s linear;
+    }
 
-.form-group.img-group .absolute-item {
-    top: 0;
-    left: 12%;
-}
+    .absolute-item {
+        position: absolute;
+        font-size: 14px;
+        font-weight: 500;
+        background-color: white;
+        padding: 3px 10px;
+        top: -12px;
+        left: 15px;
+        z-index: 1;
+    }
 
-.form-group .form-item {
-    width: 390px;
-    padding: 20px 0 20px 20px;
-    border: 1px solid #CBD3D9;
-    outline: none;
-    border-radius: 10px;
-    resize: none;
-}
+    &.img-group .absolute-item {
+        top: 0;
+        left: 12%;
+    }
 
-.form-group .form-icon {
-    left: 35px;
-    top: 21px;
-    color: #292930;
+    .form-item {
+        width: 390px;
+        padding: 20px 0 20px 20px;
+        border: 1px solid #CBD3D9;
+        outline: none;
+        border-radius: 10px;
+    }
+
+    .form-icon {
+        left: 35px;
+        top: 21px;
+        color: #292930;
+    }
 }
 
 .avatar-label {
@@ -555,19 +564,20 @@ button.btn-inc,
     display: flex;
     justify-content: flex-end;
     padding: 10px 0;
-}
 
-.avatar-label img {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    left: 0;
-    top: 0;
-    margin-right: 5px;
+    img {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        left: 0;
+        top: 0;
+        margin-right: 5px;
+    }
 }
 
 /* Form elements end */
+
 /* Swiper arrows start */
 .swiper {
     width: 100%;
@@ -836,5 +846,3 @@ button.btn-inc,
 .product-detail-block .detail-item .reviews .review-count {
     font-size: 16px;
 }
-
-/*# sourceMappingURL=App.css.map */
