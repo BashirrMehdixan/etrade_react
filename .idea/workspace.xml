@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4288bc5f-b3ec-43ab-bb30-34c4353cc9fb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/contact/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/contact/Contact.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/products/ProductDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/products/ProductDetail.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/products/css/ProductDetail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/partials/products/_productDetail.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/App.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/App.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/partials/contact/_contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/partials/contact/_contact.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +49,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1711106661" />
-                  </RecentBranch>
-                  <RecentBranch>
                     <option name="branchName" value="contact" />
                     <option name="lastUsedInstant" value="1710946591" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1710946590" />
                   </RecentBranch>
                 </list>
               </option>
@@ -80,7 +87,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Merging main",
     "last_opened_file_path": "C:/Users/bashi/OneDrive/Desktop/Github/etrade_react",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
