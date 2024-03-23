@@ -1,8 +1,8 @@
-import { useState, createContext, useEffect } from "react";
+import {useState, createContext, useEffect} from "react";
 
 export const PostsContext = createContext();
 
-const PostsProvider = ({ children }) => {
+const PostsProvider = ({children}) => {
     const [posts, setPosts] = useState([]);
     useEffect(() => {
         fetch('https://dummyjson.com/posts')
@@ -11,10 +11,8 @@ const PostsProvider = ({ children }) => {
             .catch(err => console.log(err));
     }, [])
 
-    console.log(posts);
-
     return (
-        <PostsContext.Provider value={{ posts }}>
+        <PostsContext.Provider value={{posts}}>
             {children}
         </PostsContext.Provider>
     )

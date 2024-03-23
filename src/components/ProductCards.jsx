@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { FaRegEye, FaRegHeart, FaStar } from "react-icons/fa";
 import { CiHeart, CiShoppingCart } from "react-icons/ci";
 
-
 export const ArrivalCard = ({ product, addCart, addWish }) => {
     return (
         <>
