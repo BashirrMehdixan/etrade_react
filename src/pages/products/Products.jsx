@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Helmet } from "react-helmet";
 
@@ -15,13 +15,12 @@ import { addToCart } from "features/cart";
 import "./css/Products.css";
 
 //Components
-import ProductCard from "components/ProductCard.jsx";
+import { ProductCard } from "components/ProductCards.jsx";
 
 const Products = () => {
     const { products, categories, brands } = useContext(ProductContext);
     const [select, setSelect] = useState("");
     const [brand, setBrand] = useState("");
-    const { id } = useParams();
     const dispatch = useDispatch();
     const addWish = (product) => {
         dispatch(addToWishlist(product))

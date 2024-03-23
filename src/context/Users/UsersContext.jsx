@@ -9,6 +9,7 @@ const UsersProvider = ({ children }) => {
         fetch('https://dummyjson.com/users')
             .then(res => res.json())
             .then(data => setUsers(data.users))
+            .catch(err => console.log(err));
 
     }, []);
     return (
