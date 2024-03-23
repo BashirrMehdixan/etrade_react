@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4288bc5f-b3ec-43ab-bb30-34c4353cc9fb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/scss/App.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/partials/profile/_profile.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/contact/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/contact/Contact.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/products/ProductDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/products/ProductDetail.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/products/css/ProductDetail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/partials/products/_productDetail.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/profile/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/profile/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/profile/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/profile/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/profile/css/SignUp.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/profile/css/SignUp.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/App.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/App.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/partials/contact/_contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/partials/contact/_contact.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,12 +49,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="contact" />
-                    <option name="lastUsedInstant" value="1710946591" />
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1711184972" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1710946590" />
+                    <option name="branchName" value="contact" />
+                    <option name="lastUsedInstant" value="1710946591" />
                   </RecentBranch>
                 </list>
               </option>
@@ -82,37 +82,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging main",
-    "last_opened_file_path": "C:/Users/bashi/OneDrive/Desktop/Github/etrade_react",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 241.14024.30\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/bashi/OneDrive/Desktop/Github/etrade_react&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.updates&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 241.14024.30\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "PLAIN_TEXT"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;PLAIN_TEXT&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bashi\OneDrive\Desktop\Github\etrade_react\src\scss\partials\profile" />
       <recent name="C:\Users\bashi\OneDrive\Desktop\Github\etrade_react\src\scss\partials\layouts" />
     </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-WS-241.14494.25" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-WS-241.14494.109" />
       </set>
     </attachedChunks>
   </component>
@@ -125,6 +127,8 @@
       <option name="presentableId" value="Default" />
       <updated>1710946312648</updated>
       <workItem from="1710946314167" duration="1805000" />
+      <workItem from="1711184633583" duration="687000" />
+      <workItem from="1711185366509" duration="41000" />
     </task>
     <servers />
   </component>

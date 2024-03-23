@@ -6,9 +6,6 @@ import { Helmet } from "react-helmet";
 import { signup, db } from "store/firebase";
 import { AuthContext } from "context/Auth/AuthContext";
 
-// CSS
-import "./css/SignUp.css";
-
 const Register = () => {
     const navigate = useNavigate();
     const { dispatch } = useContext(AuthContext)
