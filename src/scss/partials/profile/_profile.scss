@@ -1,0 +1,76 @@
+.signup-block {
+    display: flex;
+}
+
+.signup-block .cart-btn {
+    padding: 20px 50px;
+    margin: 0 10px;
+}
+
+.signup-block .left-item {
+    width: 30%;
+    height: 100vh;
+}
+
+.signup-block .left-item.bg-image {
+    background-image: url("../../../../public/assets/images/backgrounds/signup.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.signup-block .right-item {
+    width: 70%;
+}
+
+.signup-block .right-item .head-box.flex-head {
+    justify-content: flex-end;
+}
+
+.signup-block .right-item .head-box:not(.flex-head) {
+    text-align: center;
+}
+
+.signup-block .right-item .head-box:not(.flex-head) .subhead {
+    color: #777777;
+    font-size: 14px;
+}
+
+.signup-block .right-item .signup-form {
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.signup-block .right-item .signup-form .form-group {
+    width: 100%;
+    margin: 30px 0;
+    color: #777777;
+}
+
+.signup-block .right-item .signup-form .form-group input {
+    width: 100%;
+    padding: 20px 0 20px 20px;
+    color: #777777;
+}
+
+@media only screen and (max-width: 575px) {
+    .signup-block .cart-btn {
+        margin: 20px 10px;
+    }
+
+    .signup-block .right-item .head-box.flex-head {
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .signup-block .left-item {
+        display: none;
+    }
+
+    .signup-block .right-item {
+        width: 100%;
+    }
+}
