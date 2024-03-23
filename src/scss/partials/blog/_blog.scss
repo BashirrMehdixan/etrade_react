@@ -1,0 +1,18 @@
+.blog-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 80px 0;
+
+    .left-side {
+        width: 65%;
+        border: 1px solid red;
+        height: 100vh;
+    }
+
+    .right-side {
+        width: calc(35% - 32px);
+        border: 1px solid red;
+        height: 100vh;
+    }
+}

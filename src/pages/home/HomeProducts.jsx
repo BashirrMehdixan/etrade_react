@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 // Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -18,7 +18,7 @@ import 'swiper/css/navigation';
 import { ProductContext } from "context/Products/ProductContext.jsx";
 
 // Components
-import HomeProductCard from "components/HomeProductCard.jsx";
+import { HomeProductCard } from "components/ProductCards.jsx";
 
 // Actions
 import { addToCart } from "features/cart";
@@ -28,7 +28,6 @@ import "./css/HomeProducts.css";
 
 const HomeProducts = () => {
     const { products } = useContext(ProductContext);
-    const { id } = useParams();
     const dispatch = useDispatch();
     const addCart = (product) => {
         dispatch(addToCart(product));

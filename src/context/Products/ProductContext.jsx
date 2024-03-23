@@ -11,6 +11,7 @@ const ProductProvider = ({ children }) => {
         fetch('https://dummyjson.com/products')
             .then(res => res.json())
             .then(data => setProducts(data.products))
+            .catch(err => console.log(err));
 
     }, []);
     if (products.length > 0) {

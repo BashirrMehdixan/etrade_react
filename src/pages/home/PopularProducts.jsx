@@ -1,9 +1,8 @@
 import { useContext } from "react";
-import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 // Components
-import PopularCard from "components/PopularCard.jsx";
+import { PopularCard } from "components/ProductCards.jsx";
 // Context
 import { ProductContext } from "context/Products/ProductContext.jsx";
 
@@ -20,7 +19,6 @@ import "./css/PopularProducts.css";
 const PopularProducts = () => {
     const { products } = useContext(ProductContext);
     const dispatch = useDispatch();
-    const { id } = useParams();
     const addCart = (product) => {
         dispatch(addToCart(product));
     }

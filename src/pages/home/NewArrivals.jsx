@@ -1,8 +1,18 @@
 import { useContext } from "react";
-import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+
+
+// Actions
+import { addToCart } from "features/cart.js";
+import { addToWishlist } from "features/wishlist";
+
+// Context
+import { ProductContext } from "context/Products/ProductContext.jsx";
+
+// Components
+import { ArrivalCard } from "components/ProductCards.jsx";
 
 // Icons
 import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
@@ -12,16 +22,8 @@ import { FaShoppingBasket } from "react-icons/fa";
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-// Actions
-import { addToCart } from "features/cart.js";
-import { addToWishlist } from "features/wishlist";
-// Context
-import { ProductContext } from "context/Products/ProductContext.jsx";
-import ArrivalCard from "components/ArrivalCard.jsx";
-
 const NewArrivals = () => {
     const { products } = useContext(ProductContext);
-    const { id } = useParams();
     const dispatch = useDispatch();
     const addCart = (product) => {
         dispatch(addToCart(product));

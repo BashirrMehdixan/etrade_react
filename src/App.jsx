@@ -41,6 +41,8 @@ import Contact from "pages/contact/Contact";
 import NotFound from "pages/NotFound";
 // Blog
 import Blog from "pages/blog/Blog";
+import BlogLayout from 'layouts/BlogLayout';
+import BlogDetail from 'pages/blog/BlogDetail';
 
 function App() {
     AOS.init({
@@ -138,7 +140,9 @@ function App() {
         createRoutesFromElements(
             <>
                 <Route path="/" element={<RootLayout />}>
+                    {/* Home */}
                     {products && <Route index element={<Home />} />}
+                    {/* Account Pages */}
                     <Route path="/profile" element={
                         <RequireAuth>
                             <ProfileLayout accountData={data} />
@@ -150,15 +154,20 @@ function App() {
                         <Route path="addresses" element={<Addresses />} />
                         <Route path="account-details" element={<AccountDetail accountData={data} />} />
                     </Route>
+                    {/* Products */}
                     <Route path="/products" element={<ProductsLayout />}>
                         <Route index element={<Products />} />
                         <Route path=":id" element={<ProductDetail />} />
                     </Route>
+                    {/* Other pages */}
                     <Route path={"/about-us"} element={<About />} />
                     <Route path="/wishlist" element={<Wishlist />} />
                     <Route path="/cart" element={<Cart />} />
                     <Route path={"/contact"} element={<Contact />} />
-                    <Route path="/blog" element={<Blog />} />
+                    <Route path="/blog" element={<BlogLayout />}>
+                        <Route index element={<Blog />} />
+                        <Route path=':id' element={<BlogDetail />} />
+                    </Route>
                     <Route path="*" element={<NotFound />} />
                 </Route>
                 <Route path="login" element={<Login />} />
