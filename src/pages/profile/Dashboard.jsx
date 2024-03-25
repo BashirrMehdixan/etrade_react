@@ -4,9 +4,6 @@ import { AuthContext } from "context/Auth/AuthContext";
 import { Helmet } from "react-helmet";
 import { logout } from "store/firebase";
 
-// CSS 
-import "./css/Dashboard.css";
-
 const Dashboard = () => {
     const navigate = useNavigate();
     const { dispatch } = useContext(AuthContext);

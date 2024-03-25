@@ -17,6 +17,7 @@
 
 // Blog
 @import url(./partials/blog/_blog.scss);
+@import url(./partials/blog/_blogDetail.scss);
 
 // Contact  
 @import url(./partials/contact/_contact.scss);
@@ -714,7 +715,9 @@ button.btn-inc,
     .btn-close {
         display: flex;
     }
-    .left-side, .right-side {
+
+    .left-side,
+    .right-side {
         width: 100% !important;
     }
 
@@ -722,6 +725,7 @@ button.btn-inc,
         padding: 15px;
         font-size: 14px;
     }
+
     .head-box {
         color: #fff;
         padding: 0 10px;
