@@ -6,6 +6,7 @@
 @import url(./partials/about/_aboutFeatures.scss);
 @import url(./partials/products/_productDetail.scss);
 @import url(./partials/blog/_blog.scss);
+@import url(./partials/blog/_blogDetail.scss);
 @import url(./partials/contact/_contact.scss);
 @import url(./partials/profile/_profile.scss);
 @import url(./partials/profile/_dashboard.scss);
@@ -675,7 +676,8 @@ button.btn-inc,
   .btn-close {
     display: flex;
   }
-  .left-side, .right-side {
+  .left-side,
+  .right-side {
     width: 100% !important;
   }
   .btn-blue {
@@ -799,5 +801,3 @@ button.btn-inc,
 .product-detail-block .detail-item .reviews .review-count {
   font-size: 16px;
 }
-
-/*# sourceMappingURL=App.css.map */

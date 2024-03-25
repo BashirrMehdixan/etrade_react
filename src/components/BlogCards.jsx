@@ -27,6 +27,7 @@ export const BlogGridCard = ({post}) => {
                         </div>
                     </div>
                 </div>
+                <Link to={post.id.toString()} className={'btn btn-blue'}>Read more</Link>
             </div>
             <div className="blog-grid-item">
                 <div className="blog-img">
@@ -58,6 +59,16 @@ export const BlogGridCard = ({post}) => {
                     </p>
                 </div>
                 <Link to={post.id.toString()} className="btn btn-blue">Read more</Link>
+            </div>
+        </>
+    )
+}
+
+export const LatestBlogCard = ({post}) => {
+    return (
+        <>
+            <div>
+                {post.title}
             </div>
         </>
     )
