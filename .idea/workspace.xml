@@ -4,11 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4288bc5f-b3ec-43ab-bb30-34c4353cc9fb" name="Changes" comment="merge fixed">
-      <change afterPath="$PROJECT_DIR$/src/scss/App.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+    <list default="true" id="4288bc5f-b3ec-43ab-bb30-34c4353cc9fb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/assets/images/blog/blog-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/partials/_bgColors.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/partials/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/partials/_heads.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BlogCards.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BlogCards.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/databases.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/blog/Blog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/blog/Blog.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/blog/BlogDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/blog/BlogDetail.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/HomeProducts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/HomeProducts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/NewArrivals.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/NewArrivals.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/partials/blog/_blog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/partials/blog/_blog.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/partials/blog/_blogDetail.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/partials/blog/_blogDetail.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +58,7 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="blogDetail" />
-                    <option name="lastUsedInstant" value="1711360940" />
+                    <option name="lastUsedInstant" value="1711430789" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="contact" />
@@ -83,7 +95,7 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;blogDetail&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/bashi/OneDrive/Desktop/Github/etrade_react&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -129,6 +141,7 @@
       <workItem from="1711354929692" duration="2820000" />
       <workItem from="1711429619298" duration="873000" />
       <workItem from="1711430574053" duration="76000" />
+      <workItem from="1711442141756" duration="7561000" />
     </task>
     <task id="LOCAL-00001" summary="merge fixed">
       <option name="closed" value="true" />

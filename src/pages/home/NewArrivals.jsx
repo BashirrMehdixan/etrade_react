@@ -35,7 +35,7 @@ const NewArrivals = () => {
         <section className="home-arrival">
             <div className="container relative">
                 <div className="head-box products-head" data-aos="fade-down">
-                    <p className="best-deal">
+                    <p className="best-deal purple-head">
                         <span>
                             <FaShoppingBasket />
                         </span>

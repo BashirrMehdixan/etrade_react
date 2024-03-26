@@ -1,0 +1,71 @@
+.uni-head {
+    position: relative;
+    color: #212529;
+    font-weight: 600;
+    padding: 15px 0;
+}
+
+.head1 {
+    font-size: 40px;
+}
+
+.head2 {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.subhead {
+    font-size: 18px;
+    color: #292930;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.best-deal {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #ff497c;
+    font-weight: 800;
+    text-transform: capitalize;
+
+    &.purple-head {
+        color: #8c71db;
+    }
+}
+
+.best-deal span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    color: #fff;
+    background-color: #ff497c;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.head-box {
+    margin: 50px 0 15px 0;
+
+    &.products-head {
+        span {
+            background-color: #8c71db;
+        }
+    }
+
+    &.centered-head {
+        text-align: center;
+    }
+
+    &.centered-head {
+        .best-deal {
+            justify-content: center;
+        }
+    }
+
+    svg {
+        fill: #fff;
+    }
+}
