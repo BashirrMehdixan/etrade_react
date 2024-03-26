@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4288bc5f-b3ec-43ab-bb30-34c4353cc9fb" name="Changes" comment="merge fixed">
-      <change afterPath="$PROJECT_DIR$/public/assets/images/blog/blog-single.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/partials/blog/_blog-detail.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/App.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BlogCards.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BlogCards.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/blog/Blog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/blog/Blog.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/blog/BlogDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/blog/BlogDetail.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/App.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/App.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/partials/blog/_blog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/partials/blog/_blog.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,29 +78,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "blogDetail",
-    "last_opened_file_path": "C:/Users/bashi/OneDrive/Desktop/Github/etrade_react",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "settings.editor.selected.configurable": "preferences.updates",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 241.14024.30\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/bashi/OneDrive/Desktop/Github/etrade_react&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 241.14024.30\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "PLAIN_TEXT"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;PLAIN_TEXT&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\bashi\OneDrive\Desktop\Github\etrade_react\src\scss\partials\profile" />
@@ -116,7 +110,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-WS-241.14494.109" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-WS-241.14494.180" />
       </set>
     </attachedChunks>
   </component>
@@ -133,6 +127,8 @@
       <workItem from="1711185366509" duration="41000" />
       <workItem from="1711203671537" duration="2483000" />
       <workItem from="1711354929692" duration="2820000" />
+      <workItem from="1711429619298" duration="873000" />
+      <workItem from="1711430574053" duration="76000" />
     </task>
     <task id="LOCAL-00001" summary="merge fixed">
       <option name="closed" value="true" />
