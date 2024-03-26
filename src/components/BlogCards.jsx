@@ -73,3 +73,38 @@ export const LatestBlogCard = ({post}) => {
         </>
     )
 }
+
+export const RelatedPostCard = ({post}) => {
+    const {users} = useContext(UsersContext);
+    const authUser = users.find(user => user.id === post.id);
+    return (
+        authUser &&
+        <>
+            <div className="blog-post-item">
+                <div className="blog-img">
+                    <Link to={`/blog/${post.id.toString()}`}>
+                        <img src={"../assets/images/blog/blog-02.png"} alt=""/>
+                    </Link>
+                </div>
+                <h3 className="main-title">
+                    <Link to={`/blog/${post.id.toString()}`}>
+                        {post.title}
+                    </Link>
+                </h3>
+                <div className="post-auth">
+                    <div className="auth-img">
+                        <img src={authUser.image} alt={authUser.name}/>
+                    </div>
+                    <div className="post-info">
+                        <h5 className="auth-name">
+                            {authUser.firstName} {authUser.lastName}
+                        </h5>
+                        <div className="post-date">
+                            Mar 25, 2022
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}

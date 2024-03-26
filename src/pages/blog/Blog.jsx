@@ -15,7 +15,7 @@ const Blog = () => {
                             {posts.length && posts.map((post, index) => <BlogGridCard key={index} post={post}/>)}
                         </div>
                         <div className="right-side">
-                            {posts.map((post, index) => post.id < 4 && <LatestBlogCard key={index} post={post}/>)}
+                            {posts.map((post, index) => index < 4 && <LatestBlogCard key={index} post={post}/>)}
                         </div>
                     </div>
                 </div>
